@@ -1,1 +1,1 @@
-# swift-mongolab-kit
+# Swift MongoLab Kit by ustwo
