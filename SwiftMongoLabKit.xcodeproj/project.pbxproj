@@ -11,7 +11,7 @@
 		8180CA531CEBED05008E3011 /* SwiftMongoLabKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8180CA2E1CEBEB12008E3011 /* SwiftMongoLabKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8180CA541CEBED06008E3011 /* SwiftMongoLabKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8180CA2E1CEBEB12008E3011 /* SwiftMongoLabKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8180CABF1CEBF39F008E3011 /* SwiftMongoLabKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8180CA2B1CEBEB12008E3011 /* SwiftMongoLabKit.framework */; };
-		8180CAC51CEBF3B3008E3011 /* SwiftMongoLabKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CABC1CEBF39F008E3011 /* SwiftMongoLabKitTests.swift */; };
+		8189475C1CEC36FF004CC52B /* SwiftMongoLabKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818947571CEC36BF004CC52B /* SwiftMongoLabKitTests.swift */; };
 		81F0E61A1CEC2FD500751EC6 /* ErrorDescribable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F0E6131CEC2FD500751EC6 /* ErrorDescribable.swift */; };
 		81F0E61B1CEC2FD500751EC6 /* ErrorDescribable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F0E6131CEC2FD500751EC6 /* ErrorDescribable.swift */; };
 		81F0E61C1CEC2FD500751EC6 /* ErrorDescribable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F0E6131CEC2FD500751EC6 /* ErrorDescribable.swift */; };
@@ -60,13 +60,13 @@
 		8180CA501CEBEBE7008E3011 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-iOS.plist"; path = "Sources/Info-iOS.plist"; sourceTree = "<group>"; };
 		8180CA511CEBEBE7008E3011 /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-tvOS.plist"; path = "Sources/Info-tvOS.plist"; sourceTree = "<group>"; };
 		8180CA521CEBEBE7008E3011 /* Info-watchOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-watchOS.plist"; path = "Sources/Info-watchOS.plist"; sourceTree = "<group>"; };
-		8180CA561CEBEEB8008E3011 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		8180CA571CEBEEB8008E3011 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		8180CA561CEBEEB8008E3011 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		8180CA571CEBEEB8008E3011 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8180CABA1CEBF39F008E3011 /* SwiftMongoLabKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftMongoLabKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8180CABC1CEBF39F008E3011 /* SwiftMongoLabKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMongoLabKitTests.swift; sourceTree = "<group>"; };
-		8180CABE1CEBF39F008E3011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8180CAF41CEC0240008E3011 /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CONTRIBUTING.md; path = ../CONTRIBUTING.md; sourceTree = "<group>"; };
-		81DC6E3E1CEC18DA00D390AA /* SwiftMongoLabKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = SwiftMongoLabKit.podspec; path = ../SwiftMongoLabKit.podspec; sourceTree = "<group>"; };
+		8180CAF41CEC0240008E3011 /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
+		818947561CEC36BF004CC52B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = SOURCE_ROOT; };
+		818947571CEC36BF004CC52B /* SwiftMongoLabKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SwiftMongoLabKitTests.swift; path = Tests/SwiftMongoLabKitTests.swift; sourceTree = SOURCE_ROOT; };
+		81DC6E3E1CEC18DA00D390AA /* SwiftMongoLabKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SwiftMongoLabKit.podspec; sourceTree = "<group>"; };
 		81F0E6131CEC2FD500751EC6 /* ErrorDescribable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorDescribable.swift; path = Sources/ErrorDescribable.swift; sourceTree = "<group>"; };
 		81F0E6141CEC2FD500751EC6 /* MongoLabClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MongoLabClient.swift; path = Sources/MongoLabClient.swift; sourceTree = "<group>"; };
 		81F0E6151CEC2FD500751EC6 /* MongoLabConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MongoLabConfiguration.swift; path = Sources/MongoLabConfiguration.swift; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 			children = (
 				8180CA551CEBEE8E008E3011 /* Metadata */,
 				8180CA4F1CEBEBD8008E3011 /* Sources */,
-				8180CABB1CEBF39F008E3011 /* SwiftMongoLabKitTests */,
+				8180CABB1CEBF39F008E3011 /* Tests */,
 				8180CA2C1CEBEB12008E3011 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -167,12 +167,13 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
-		8180CABB1CEBF39F008E3011 /* SwiftMongoLabKitTests */ = {
+		8180CABB1CEBF39F008E3011 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				8180CABC1CEBF39F008E3011 /* SwiftMongoLabKitTests.swift */,
-				8180CABE1CEBF39F008E3011 /* Info.plist */,
+				818947561CEC36BF004CC52B /* Info.plist */,
+				818947571CEC36BF004CC52B /* SwiftMongoLabKitTests.swift */,
 			);
+			name = Tests;
 			path = SwiftMongoLabKitTests;
 			sourceTree = "<group>";
 		};
@@ -400,11 +401,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				81F0E62D1CEC2FD500751EC6 /* MongoLabErrorParser.swift in Sources */,
-				8180CAC51CEBF3B3008E3011 /* SwiftMongoLabKitTests.swift in Sources */,
 				81F0E6311CEC2FD500751EC6 /* MongoLabResponseParser.swift in Sources */,
 				81F0E6251CEC2FD500751EC6 /* MongoLabConfiguration.swift in Sources */,
 				81F0E6291CEC2FD500751EC6 /* MongoLabError.swift in Sources */,
 				81F0E6211CEC2FD500751EC6 /* MongoLabClient.swift in Sources */,
+				8189475C1CEC36FF004CC52B /* SwiftMongoLabKitTests.swift in Sources */,
 				81F0E6351CEC2FD500751EC6 /* MongoLabURLRequest.swift in Sources */,
 				81F0E61D1CEC2FD500751EC6 /* ErrorDescribable.swift in Sources */,
 			);
@@ -807,7 +808,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = SwiftMongoLabKitTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -850,7 +851,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = SwiftMongoLabKitTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
