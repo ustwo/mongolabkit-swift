@@ -68,9 +68,11 @@ $ gem install cocoapods
 To integrate SwiftMongoLabKit into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-source 'https://github.com/ustwo/swift-mongolab-kit.git'
+use_frameworks!
 
-pod 'SwiftMongoLabKit', '~>0.1'
+target ‘Test’ do
+pod 'SwiftMongoLabKit'
+end
 ```
 
 Then, run the following command:
