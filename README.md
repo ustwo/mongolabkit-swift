@@ -48,7 +48,6 @@ Then use platform-specific commands to create the build products that you need t
 
 ````
 carthage update --platform iOS
-carthage update --platform OSX
 carthage update --platform tvOS
 carthage update --platform watchOS
 ````
