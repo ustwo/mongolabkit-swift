@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8180CA451CEBEB44008E3011"
-               BuildableName = "SwiftMongoLabKit tvOS.framework"
+               BuildableName = "SwiftMongoLabKit.framework"
                BlueprintName = "SwiftMongoLabKit tvOS"
                ReferencedContainer = "container:SwiftMongoLabKit.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8180CA451CEBEB44008E3011"
-            BuildableName = "SwiftMongoLabKit tvOS.framework"
+            BuildableName = "SwiftMongoLabKit.framework"
             BlueprintName = "SwiftMongoLabKit tvOS"
             ReferencedContainer = "container:SwiftMongoLabKit.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8180CA451CEBEB44008E3011"
-            BuildableName = "SwiftMongoLabKit tvOS.framework"
+            BuildableName = "SwiftMongoLabKit.framework"
             BlueprintName = "SwiftMongoLabKit tvOS"
             ReferencedContainer = "container:SwiftMongoLabKit.xcodeproj">
          </BuildableReference>

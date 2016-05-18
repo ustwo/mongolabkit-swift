@@ -31,7 +31,19 @@
 		8180CA721CEBEEE4008E3011 /* MongoLabURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA5F1CEBEEE4008E3011 /* MongoLabURLRequest.swift */; };
 		8180CA731CEBEEE4008E3011 /* MongoLabURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA5F1CEBEEE4008E3011 /* MongoLabURLRequest.swift */; };
 		8180CA741CEBEEE4008E3011 /* MongoLabURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA5F1CEBEEE4008E3011 /* MongoLabURLRequest.swift */; };
+		8180CABF1CEBF39F008E3011 /* SwiftMongoLabKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8180CA2B1CEBEB12008E3011 /* SwiftMongoLabKit.framework */; };
+		8180CAC51CEBF3B3008E3011 /* SwiftMongoLabKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CABC1CEBF39F008E3011 /* SwiftMongoLabKitTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8180CAC01CEBF39F008E3011 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8180CA201CEBEA71008E3011 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8180CA2A1CEBEB12008E3011;
+			remoteInfo = "SwiftMongoLabKit iOS";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		8180CA2B1CEBEB12008E3011 /* SwiftMongoLabKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftMongoLabKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +62,9 @@
 		8180CA5D1CEBEEE4008E3011 /* MongoLabErrorParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MongoLabErrorParser.swift; path = Sources/Classes/MongoLabErrorParser.swift; sourceTree = "<group>"; };
 		8180CA5E1CEBEEE4008E3011 /* MongoLabResponseParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MongoLabResponseParser.swift; path = Sources/Classes/MongoLabResponseParser.swift; sourceTree = "<group>"; };
 		8180CA5F1CEBEEE4008E3011 /* MongoLabURLRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MongoLabURLRequest.swift; path = Sources/Classes/MongoLabURLRequest.swift; sourceTree = "<group>"; };
+		8180CABA1CEBF39F008E3011 /* SwiftMongoLabKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftMongoLabKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8180CABC1CEBF39F008E3011 /* SwiftMongoLabKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMongoLabKitTests.swift; sourceTree = "<group>"; };
+		8180CABE1CEBF39F008E3011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +89,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8180CAB71CEBF39F008E3011 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8180CABF1CEBF39F008E3011 /* SwiftMongoLabKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,6 +105,7 @@
 			children = (
 				8180CA551CEBEE8E008E3011 /* Metadata */,
 				8180CA4F1CEBEBD8008E3011 /* Sources */,
+				8180CABB1CEBF39F008E3011 /* SwiftMongoLabKitTests */,
 				8180CA2C1CEBEB12008E3011 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,6 +116,7 @@
 				8180CA2B1CEBEB12008E3011 /* SwiftMongoLabKit.framework */,
 				8180CA391CEBEB39008E3011 /* SwiftMongoLabKit.framework */,
 				8180CA461CEBEB44008E3011 /* SwiftMongoLabKit.framework */,
+				8180CABA1CEBF39F008E3011 /* SwiftMongoLabKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,6 +154,15 @@
 				8180CA5F1CEBEEE4008E3011 /* MongoLabURLRequest.swift */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		8180CABB1CEBF39F008E3011 /* SwiftMongoLabKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				8180CABC1CEBF39F008E3011 /* SwiftMongoLabKitTests.swift */,
+				8180CABE1CEBF39F008E3011 /* Info.plist */,
+			);
+			path = SwiftMongoLabKitTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,12 +249,31 @@
 			productReference = 8180CA461CEBEB44008E3011 /* SwiftMongoLabKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		8180CAB91CEBF39F008E3011 /* SwiftMongoLabKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8180CAC21CEBF39F008E3011 /* Build configuration list for PBXNativeTarget "SwiftMongoLabKitTests" */;
+			buildPhases = (
+				8180CAB61CEBF39F008E3011 /* Sources */,
+				8180CAB71CEBF39F008E3011 /* Frameworks */,
+				8180CAB81CEBF39F008E3011 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8180CAC11CEBF39F008E3011 /* PBXTargetDependency */,
+			);
+			name = SwiftMongoLabKitTests;
+			productName = SwiftMongoLabKitTests;
+			productReference = 8180CABA1CEBF39F008E3011 /* SwiftMongoLabKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		8180CA201CEBEA71008E3011 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				TargetAttributes = {
 					8180CA2A1CEBEB12008E3011 = {
@@ -230,6 +283,9 @@
 						CreatedOnToolsVersion = 7.3.1;
 					};
 					8180CA451CEBEB44008E3011 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					8180CAB91CEBF39F008E3011 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
@@ -249,6 +305,7 @@
 				8180CA2A1CEBEB12008E3011 /* SwiftMongoLabKit iOS */,
 				8180CA381CEBEB39008E3011 /* SwiftMongoLabKit watchOS */,
 				8180CA451CEBEB44008E3011 /* SwiftMongoLabKit tvOS */,
+				8180CAB91CEBF39F008E3011 /* SwiftMongoLabKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -269,6 +326,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8180CA441CEBEB44008E3011 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8180CAB81CEBF39F008E3011 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -320,7 +384,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8180CAB61CEBF39F008E3011 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8180CAC51CEBF3B3008E3011 /* SwiftMongoLabKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8180CAC11CEBF39F008E3011 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8180CA2A1CEBEB12008E3011 /* SwiftMongoLabKit iOS */;
+			targetProxy = 8180CAC01CEBF39F008E3011 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8180CA241CEBEA71008E3011 /* Debug */ = {
@@ -672,6 +752,97 @@
 			};
 			name = Release;
 		};
+		8180CAC31CEBF39F008E3011 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = SwiftMongoLabKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ustwo.SwiftMongoLabKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8180CAC41CEBF39F008E3011 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = SwiftMongoLabKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ustwo.SwiftMongoLabKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -691,6 +862,7 @@
 				8180CA331CEBEB12008E3011 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8180CA3E1CEBEB39008E3011 /* Build configuration list for PBXNativeTarget "SwiftMongoLabKit watchOS" */ = {
 			isa = XCConfigurationList;
@@ -699,12 +871,22 @@
 				8180CA401CEBEB39008E3011 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8180CA4B1CEBEB44008E3011 /* Build configuration list for PBXNativeTarget "SwiftMongoLabKit tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8180CA4C1CEBEB44008E3011 /* Debug */,
 				8180CA4D1CEBEB44008E3011 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8180CAC21CEBF39F008E3011 /* Build configuration list for PBXNativeTarget "SwiftMongoLabKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8180CAC31CEBF39F008E3011 /* Debug */,
+				8180CAC41CEBF39F008E3011 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
