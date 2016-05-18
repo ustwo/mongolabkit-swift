@@ -2,7 +2,10 @@
 ---
 
 ### Welcome to SwiftMongoLabKit 
-[![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/Carthage/Carthage/master/LICENSE.md) [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Platforms iOS | watchOS | tvOS](https://img.shields.io/badge/Platforms-iOS%20%7C%20watchOS%20%7C%20tvOS-lightgray.svg?style=flat)](https://developer.apple.com/swift/)
+[![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/ustwo/swift-mongolab-kit/blob/master/LICENSE) 
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![CocoaPods Compatible](https://img.shields.io/badge/Pods-compatible-4BC51D.svg?style=flat)](https://cocoapods.org)
+[![Platforms iOS | watchOS | tvOS](https://img.shields.io/badge/Platforms-iOS%20%7C%20watchOS%20%7C%20tvOS-lightgray.svg?style=flat)](https://developer.apple.com/swift/)
 
 SwiftMongoLabKit is a REST client API for iOS, tvOS and watchOS written to make REST calls to a MongoLab database.
 
@@ -52,6 +55,32 @@ carthage update --platform tvOS
 carthage update --platform watchOS
 ````
 
+### Installation with CocoaPods
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for swift and Objective-C, which automates and simplifies the process of using 3rd-party libraries like SwiftMongoLabKit in your projects. You can install it with the following command:
+
+```bash
+$ gem install cocoapods
+```
+
+#### Podfile
+
+To integrate SwiftMongoLabKit into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+use_frameworks!
+
+target ‘Test’ do
+pod 'SwiftMongoLabKit'
+end
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
+
 ---
 
 ## Usage
@@ -87,16 +116,16 @@ let request = MongoLabURLRequest.URLRequestWithConfiguration(configuration, rela
 let client = MongoLabClient()
 
 client.performRequest(request) {
-    result in
+result in
 
-    switch result {
-    case let .Success(response):
-        print("Success \(response)")
+switch result {
+case let .Success(response):
+print("Success \(response)")
 
-    case let .Failure(error):
-        print("Error \(error)")
-        
-    }
+case let .Failure(error):
+print("Error \(error)")
+
+}
 }
 ```
 
