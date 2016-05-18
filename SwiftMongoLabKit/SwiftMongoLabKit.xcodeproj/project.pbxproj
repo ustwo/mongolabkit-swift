@@ -65,6 +65,7 @@
 		8180CABA1CEBF39F008E3011 /* SwiftMongoLabKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftMongoLabKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8180CABC1CEBF39F008E3011 /* SwiftMongoLabKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMongoLabKitTests.swift; sourceTree = "<group>"; };
 		8180CABE1CEBF39F008E3011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8180CAF41CEC0240008E3011 /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CONTRIBUTING.md; path = ../CONTRIBUTING.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +139,7 @@
 			children = (
 				8180CA561CEBEEB8008E3011 /* LICENSE */,
 				8180CA571CEBEEB8008E3011 /* README.md */,
+				8180CAF41CEC0240008E3011 /* CONTRIBUTING.md */,
 			);
 			name = Metadata;
 			sourceTree = "<group>";
