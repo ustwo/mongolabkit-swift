@@ -10,6 +10,6 @@ Pod::Spec.new do |spec|
     spec.watchos.deployment_target = '2.0'
     spec.tvos.deployment_target = '9.0'
     spec.requires_arc = true
-    spec.source = { git: 'https://github.com/ustwo/swift-mongolab-kit.git', tag: '0.2' }
+    spec.source = { :git => 'https://github.com/ustwo/swift-mongolab-kit.git', :tag => spec.version, :submodules => true }
     spec.source_files = 'SwiftMongoLabKit/Sources/*'
 end
