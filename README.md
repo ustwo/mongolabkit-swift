@@ -119,13 +119,13 @@ client.performRequest(request) {
 result in
 
 switch result {
-case let .Success(response):
-print("Success \(response)")
-
-case let .Failure(error):
-print("Error \(error)")
-
-}
+    case let .Success(response):
+        print("Success \(response)")
+    
+    case let .Failure(error):
+        print("Error \(error)")
+    
+    }
 }
 ```
 
