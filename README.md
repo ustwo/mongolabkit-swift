@@ -83,19 +83,29 @@ $ pod install
 
 ---
 
-## Usage
+## Usage with service
 
-### Creating a configuration map
+### Listing collections
 
-A configuration map must be created to define the mongoLab database baseURL and apiKey
-
-``` swift 
+``` swift
 let configuration = MongoLabConfiguration(baseURL: "{BASE_URL}", apiKey: "{API_KEY}")
+
+let service = CollectionService(configuration: configuration, delegate: self)
+
+service.loadCollections()
 ```
+
+*An example is available [here](https://github.com/ustwo/mongolabkit-swift/SwiftMongoLabKit/SwiftMongoLabKitExamples/ViewController.swift)*
+
+---
+
+## Usage with custom requests
 
 ### Creating a GET request with query string parameters
 
 ``` Swift
+let configuration = MongoLabConfiguration(baseURL: "{BASE_URL}", apiKey: "{API_KEY}")
+
 let parameter1 = MongoLabURLRequest.RequestParameter(parameter: "{PARAMETER_NAME}", value: "{PARAMETER_VALUE}")
 let parameter2 = MongoLabURLRequest.RequestParameter(parameter: "{PARAMETER_NAME}", value: "{PARAMETER_VALUE}")
 
@@ -105,6 +115,8 @@ let request = MongoLabURLRequest.URLRequestWithConfiguration(configuration, rela
 ### Creating a POST request with body data
 
 ``` Swift
+let configuration = MongoLabConfiguration(baseURL: "{BASE_URL}", apiKey: "{API_KEY}")
+
 let body: [String: AnyObject] = [{PARAMETER_KEY}: [{PARAMETER_KEY}: {PARAMETER_VALUE}]]
 
 let request = MongoLabURLRequest.URLRequestWithConfiguration(configuration, relativeURL: "collections/[COLLECTION_NAME]", method: .POST, parameters: [], bodyData: body)
