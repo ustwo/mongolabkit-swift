@@ -11,7 +11,7 @@ developers managing and developing this open source project. In return, they
 should reciprocate that respect in addressing your issue or assessing patches 
 and features.
 
-The [issue tracker](https://github.com/ustwo/swift-mongolab-kit/issues) is the preferred channel for bug reports, features requests 
+The [issue tracker](https://github.com/ustwo/mongolabkit-swift/issues) is the preferred channel for bug reports, features requests 
 and submitting pull requests.
 
 A bug is a demonstrable problem that is caused by the code in the repository. 
