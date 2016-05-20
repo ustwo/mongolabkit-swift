@@ -2,7 +2,7 @@
 ---
 
 ### Welcome to SwiftMongoLabKit 
-[![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/ustwo/swift-mongolab-kit/blob/master/LICENSE) 
+[![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/ustwo/mongolabkit-swift/blob/master/LICENSE) 
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods Compatible](https://img.shields.io/badge/Pods-compatible-4BC51D.svg?style=flat)](https://cocoapods.org)
 [![Platforms iOS | watchOS | tvOS](https://img.shields.io/badge/Platforms-iOS%20%7C%20watchOS%20%7C%20tvOS-lightgray.svg?style=flat)](https://developer.apple.com/swift/)
@@ -44,7 +44,7 @@ $ brew install carthage
 To integrate SwiftMongoLabKit into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ``` ogdl
-github "ustwo/swift-mongolab-kit"
+github "ustwo/mongolabkit-swift"
 ```
 
 Then use platform-specific commands to create the build products that you need to add to your project:
@@ -143,7 +143,7 @@ switch result {
 Do you love the app and want to get involved? Or maybe you've found a bug or 
 have a new feature suggestion? Thanks! There are plenty of ways you can help.
 
-Please see the [Contributing to SwiftMongoLabKit guide](https://github.com/ustwo/swift-mongolab-kit/blob/develop/CONTRIBUTING.md).
+Please see the [Contributing to SwiftMongoLabKit guide](https://github.com/ustwo/mongolabkit-swift/blob/develop/CONTRIBUTING.md).
 
 ---
 
