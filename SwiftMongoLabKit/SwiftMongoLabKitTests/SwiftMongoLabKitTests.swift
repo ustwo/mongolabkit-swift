@@ -31,9 +31,9 @@ class SwiftMongoLabKit_iOSTests: XCTestCase {
 
         let configuration = MongoLabConfiguration(baseURL: "", apiKey: "")
 
-        let service = CollectionService(client: client, delegate: delegate)
+        let service = CollectionService(client: client, configuration: configuration, delegate: delegate)
 
-        service.loadCollectionsWithConfiguration(configuration)
+        service.loadCollections()
 
         waitForExpectationsWithTimeout(10, handler: nil)
     }

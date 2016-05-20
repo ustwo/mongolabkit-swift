@@ -16,12 +16,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let configuration = MongoLabConfiguration(baseURL: "", apiKey: "")
-
         let client = MongoLabClient()
 
-        service = CollectionService(client: client, delegate: self)
-        service?.loadCollectionsWithConfiguration(configuration)
+        let configuration = MongoLabConfiguration(baseURL: "", apiKey: "")
+
+        service = CollectionService(client: client, configuration: configuration, delegate: self)
+        service?.loadCollections()
     }
 
 }

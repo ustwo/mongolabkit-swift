@@ -92,9 +92,9 @@ let configuration = MongoLabConfiguration(baseURL: "{BASE_URL}", apiKey: "{API_K
 
 let client = MongoLabClient()
 
-let service = CollectionService(client: client, delegate: {DELEGATE})
+let service = CollectionService(client: client, configuration: configuration, delegate: self)
 
-service.loadCollectionsWithConfiguration(configuration)
+service.loadCollections()
 ```
 
 *An example is available [here](https://github.com/ustwo/mongolabkit-swift/SwiftMongoLabKit/SwiftMongoLabKitExamples/ViewController.swift)*

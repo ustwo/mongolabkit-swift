@@ -19,11 +19,15 @@ class CollectionService {
 
     private var client: MongoLabClient
 
+    private var configuration: MongoLabConfiguration
+
     weak var delegate: CollectionServiceDelegate?
 
 
-    required init(client: MongoLabClient, delegate: CollectionServiceDelegate) {
+    required init(client: MongoLabClient, configuration: MongoLabConfiguration, delegate: CollectionServiceDelegate) {
         self.client = client
+        self.configuration = configuration
+
         self.delegate = delegate
     }
 
@@ -32,7 +36,7 @@ class CollectionService {
 
 extension CollectionService {
 
-    func loadCollectionsWithConfiguration(configuration: MongoLabConfiguration) {
+    func loadCollections() {
         defer {
             delegate?.collectionServiceWillLoadCollection(self)
         }
@@ -56,7 +60,7 @@ extension CollectionService {
             serviceError(error as? ErrorDescribable ?? MongoLabError.RequestError)
         }
     }
-
+    
 }
 
 
