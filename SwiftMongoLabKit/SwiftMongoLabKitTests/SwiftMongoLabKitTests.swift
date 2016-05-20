@@ -33,7 +33,7 @@ class SwiftMongoLabKit_iOSTests: XCTestCase {
 
         let service = CollectionService(client: client, delegate: delegate)
 
-        service.loadCollectionsWithconfiguration(configuration)
+        service.loadCollectionsWithConfiguration(configuration)
 
         waitForExpectationsWithTimeout(10, handler: nil)
     }

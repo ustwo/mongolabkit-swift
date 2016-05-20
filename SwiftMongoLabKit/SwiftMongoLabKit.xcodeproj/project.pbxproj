@@ -52,6 +52,21 @@
 		8180CA741CEBEEE4008E3011 /* MongoLabURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA5F1CEBEEE4008E3011 /* MongoLabURLRequest.swift */; };
 		8180CABF1CEBF39F008E3011 /* SwiftMongoLabKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8180CA2B1CEBEB12008E3011 /* SwiftMongoLabKit.framework */; };
 		8180CAC51CEBF3B3008E3011 /* SwiftMongoLabKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CABC1CEBF39F008E3011 /* SwiftMongoLabKitTests.swift */; };
+		819ECB161CEEC89F000AB899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819ECB151CEEC89F000AB899 /* AppDelegate.swift */; };
+		819ECB181CEEC89F000AB899 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819ECB171CEEC89F000AB899 /* ViewController.swift */; };
+		819ECB1B1CEEC89F000AB899 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 819ECB191CEEC89F000AB899 /* Main.storyboard */; };
+		819ECB1D1CEEC89F000AB899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819ECB1C1CEEC89F000AB899 /* Assets.xcassets */; };
+		819ECB201CEEC89F000AB899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 819ECB1E1CEEC89F000AB899 /* LaunchScreen.storyboard */; };
+		819ECB251CEEC93F000AB899 /* ErrorDescribable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA591CEBEEE4008E3011 /* ErrorDescribable.swift */; };
+		819ECB261CEEC93F000AB899 /* MongoLabError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA5C1CEBEEE4008E3011 /* MongoLabError.swift */; };
+		819ECB271CEEC93F000AB899 /* MongoLabConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA5B1CEBEEE4008E3011 /* MongoLabConfiguration.swift */; };
+		819ECB281CEEC93F000AB899 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A751CEEBBB300487BFE /* Collection.swift */; };
+		819ECB291CEEC93F000AB899 /* MongoLabClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA5A1CEBEEE4008E3011 /* MongoLabClient.swift */; };
+		819ECB2A1CEEC93F000AB899 /* CollectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A811CEEBC5B00487BFE /* CollectionService.swift */; };
+		819ECB2B1CEEC93F000AB899 /* MongoLabURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA5F1CEBEEE4008E3011 /* MongoLabURLRequest.swift */; };
+		819ECB2C1CEEC93F000AB899 /* MongoLabErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA5D1CEBEEE4008E3011 /* MongoLabErrorParser.swift */; };
+		819ECB2D1CEEC93F000AB899 /* MongoLabResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA5E1CEBEEE4008E3011 /* MongoLabResponseParser.swift */; };
+		819ECB2E1CEEC93F000AB899 /* FileCollectionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A861CEEBDBE00487BFE /* FileCollectionParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +105,13 @@
 		8180CABE1CEBF39F008E3011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8180CAF41CEC0240008E3011 /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CONTRIBUTING.md; path = ../CONTRIBUTING.md; sourceTree = "<group>"; };
 		8189475D1CEC3E86004CC52B /* SwiftMongoLabKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = SwiftMongoLabKit.podspec; path = ../SwiftMongoLabKit.podspec; sourceTree = "<group>"; };
+		819ECB131CEEC89F000AB899 /* SwiftMongoLabKitExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftMongoLabKitExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		819ECB151CEEC89F000AB899 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		819ECB171CEEC89F000AB899 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		819ECB1A1CEEC89F000AB899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		819ECB1C1CEEC89F000AB899 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		819ECB1F1CEEC89F000AB899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		819ECB211CEEC89F000AB899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +141,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8180CABF1CEBF39F008E3011 /* SwiftMongoLabKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		819ECB101CEEC89F000AB899 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +205,7 @@
 				8180CA551CEBEE8E008E3011 /* Metadata */,
 				8180CA4F1CEBEBD8008E3011 /* Sources */,
 				8180CABB1CEBF39F008E3011 /* SwiftMongoLabKitTests */,
+				819ECB141CEEC89F000AB899 /* SwiftMongoLabKitExamples */,
 				8180CA2C1CEBEB12008E3011 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -187,6 +217,7 @@
 				8180CA391CEBEB39008E3011 /* SwiftMongoLabKit.framework */,
 				8180CA461CEBEB44008E3011 /* SwiftMongoLabKit.framework */,
 				8180CABA1CEBF39F008E3011 /* SwiftMongoLabKitTests.xctest */,
+				819ECB131CEEC89F000AB899 /* SwiftMongoLabKitExamples.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -234,6 +265,19 @@
 				8180CABE1CEBF39F008E3011 /* Info.plist */,
 			);
 			path = SwiftMongoLabKitTests;
+			sourceTree = "<group>";
+		};
+		819ECB141CEEC89F000AB899 /* SwiftMongoLabKitExamples */ = {
+			isa = PBXGroup;
+			children = (
+				819ECB151CEEC89F000AB899 /* AppDelegate.swift */,
+				819ECB171CEEC89F000AB899 /* ViewController.swift */,
+				819ECB191CEEC89F000AB899 /* Main.storyboard */,
+				819ECB1C1CEEC89F000AB899 /* Assets.xcassets */,
+				819ECB1E1CEEC89F000AB899 /* LaunchScreen.storyboard */,
+				819ECB211CEEC89F000AB899 /* Info.plist */,
+			);
+			path = SwiftMongoLabKitExamples;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +382,23 @@
 			productReference = 8180CABA1CEBF39F008E3011 /* SwiftMongoLabKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		819ECB121CEEC89F000AB899 /* SwiftMongoLabKitExamples */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 819ECB241CEEC89F000AB899 /* Build configuration list for PBXNativeTarget "SwiftMongoLabKitExamples" */;
+			buildPhases = (
+				819ECB0F1CEEC89F000AB899 /* Sources */,
+				819ECB101CEEC89F000AB899 /* Frameworks */,
+				819ECB111CEEC89F000AB899 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftMongoLabKitExamples;
+			productName = SwiftMongoLabKitExamples;
+			productReference = 819ECB131CEEC89F000AB899 /* SwiftMongoLabKitExamples.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -359,6 +420,9 @@
 					8180CAB91CEBF39F008E3011 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
+					819ECB121CEEC89F000AB899 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 				};
 			};
 			buildConfigurationList = 8180CA231CEBEA71008E3011 /* Build configuration list for PBXProject "SwiftMongoLabKit" */;
@@ -367,6 +431,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 8180CA1F1CEBEA71008E3011;
 			productRefGroup = 8180CA2C1CEBEB12008E3011 /* Products */;
@@ -377,6 +442,7 @@
 				8180CA381CEBEB39008E3011 /* SwiftMongoLabKit watchOS */,
 				8180CA451CEBEB44008E3011 /* SwiftMongoLabKit tvOS */,
 				8180CAB91CEBF39F008E3011 /* SwiftMongoLabKitTests */,
+				819ECB121CEEC89F000AB899 /* SwiftMongoLabKitExamples */,
 			);
 		};
 /* End PBXProject section */
@@ -407,6 +473,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		819ECB111CEEC89F000AB899 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				819ECB201CEEC89F000AB899 /* LaunchScreen.storyboard in Resources */,
+				819ECB1D1CEEC89F000AB899 /* Assets.xcassets in Resources */,
+				819ECB1B1CEEC89F000AB899 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +558,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		819ECB0F1CEEC89F000AB899 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				819ECB181CEEC89F000AB899 /* ViewController.swift in Sources */,
+				819ECB2B1CEEC93F000AB899 /* MongoLabURLRequest.swift in Sources */,
+				819ECB291CEEC93F000AB899 /* MongoLabClient.swift in Sources */,
+				819ECB251CEEC93F000AB899 /* ErrorDescribable.swift in Sources */,
+				819ECB271CEEC93F000AB899 /* MongoLabConfiguration.swift in Sources */,
+				819ECB281CEEC93F000AB899 /* Collection.swift in Sources */,
+				819ECB2E1CEEC93F000AB899 /* FileCollectionParser.swift in Sources */,
+				819ECB2C1CEEC93F000AB899 /* MongoLabErrorParser.swift in Sources */,
+				819ECB161CEEC89F000AB899 /* AppDelegate.swift in Sources */,
+				819ECB261CEEC93F000AB899 /* MongoLabError.swift in Sources */,
+				819ECB2D1CEEC93F000AB899 /* MongoLabResponseParser.swift in Sources */,
+				819ECB2A1CEEC93F000AB899 /* CollectionService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -491,6 +586,25 @@
 			targetProxy = 8180CAC01CEBF39F008E3011 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		819ECB191CEEC89F000AB899 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				819ECB1A1CEEC89F000AB899 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		819ECB1E1CEEC89F000AB899 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				819ECB1F1CEEC89F000AB899 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8180CA241CEBEA71008E3011 /* Debug */ = {
@@ -933,6 +1047,99 @@
 			};
 			name = Release;
 		};
+		819ECB221CEEC89F000AB899 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = SwiftMongoLabKitExamples/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ustwo.SwiftMongoLabKitExamples;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		819ECB231CEEC89F000AB899 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = SwiftMongoLabKitExamples/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ustwo.SwiftMongoLabKitExamples;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -980,6 +1187,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		819ECB241CEEC89F000AB899 /* Build configuration list for PBXNativeTarget "SwiftMongoLabKitExamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				819ECB221CEEC89F000AB899 /* Debug */,
+				819ECB231CEEC89F000AB899 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

@@ -32,7 +32,7 @@ class CollectionService {
 
 extension CollectionService {
 
-    func loadCollectionsWithconfiguration(configuration: MongoLabConfiguration) {
+    func loadCollectionsWithConfiguration(configuration: MongoLabConfiguration) {
         defer {
             delegate?.collectionServiceWillLoadCollection(self)
         }
