@@ -11,32 +11,66 @@ import XCTest
 
 class SwiftMongoLabKit_iOSTests: XCTestCase {
 
-    private let configuration = MongoLabConfiguration(baseURL: "", apiKey: "")
-
-
-    func testLoadCollections() {
-        precondition(!configuration.baseURL.isEmpty && !configuration.apiKey.isEmpty, "Configure your own mongolab database")
-
+    func testLoadCollectionsWithEmptyConfiguration() {
         let expectation = expectationWithDescription("asynchronous")
-
-        let request = MongoLabURLRequest.URLRequestWithConfiguration(configuration, relativeURL: "collections", method: .GET, parameters: [], bodyData: nil)
 
         let client = MongoLabClient()
 
-        client.performRequest(request) {
+        let delegate = CollectionServiceDelegateWithCompletion() {
             result in
             expectation.fulfill()
 
             switch result {
-            case let .Success(response):
-                XCTAssertNotNil(response)
+            case .Success:
+                XCTFail()
 
             case let .Failure(error):
-                XCTFail(error.description())
+                XCTAssertEqual(error.description(), MongoLabError.RequestError.description())
             }
         }
+
+        let configuration = MongoLabConfiguration(baseURL: "", apiKey: "")
+
+        let service = CollectionService(client: client, configuration: configuration, delegate: delegate)
+
+        service.loadCollections()
 
         waitForExpectationsWithTimeout(10, handler: nil)
     }
     
 }
+
+
+class CollectionServiceDelegateWithCompletion: CollectionServiceDelegate {
+
+    enum Result {
+        case Success(response: AnyObject)
+        case Failure(error: ErrorDescribable)
+    }
+
+    typealias Completion = (result: Result) -> ()
+
+    private let completion: Completion
+
+
+    func collectionServiceWillLoadCollection(service: CollectionService?) {
+
+    }
+
+
+    func collectionService(service: CollectionService?, didLoadCollections collections: Collections) {
+        completion(result: Result.Success(response: collections))
+    }
+
+
+    func collectionService(service: CollectionService?, didFailWithError error: ErrorDescribable) {
+        completion(result: Result.Failure(error: error))
+    }
+
+
+    init(completion: Completion) {
+        self.completion = completion
+    }
+
+}
+

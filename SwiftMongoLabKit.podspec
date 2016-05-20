@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name = 'SwiftMongoLabKit'
-    spec.version = '0.3'
+    spec.version = '0.4'
     spec.summary = 'SwiftMongoLabKit is a REST client API for iOS, tvOS and watchOS written to make REST calls to a MongoLab database.'
     spec.homepage = 'https://github.com/ustwo/mongolabkit-swift'
     spec.license = { type: 'MIT', file: 'LICENSE' }
