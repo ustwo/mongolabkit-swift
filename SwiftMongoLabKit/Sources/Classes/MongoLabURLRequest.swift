@@ -23,7 +23,11 @@ public class MongoLabURLRequest: NSMutableURLRequest {
 
 extension MongoLabURLRequest {
 
-    public class func URLRequestWithConfiguration(configuration: MongoLabConfiguration, relativeURL: String, method: HTTPMethod, parameters: [RequestParameter]?, bodyData: AnyObject?) -> NSMutableURLRequest {
+    public class func URLRequestWithConfiguration(configuration: MongoLabConfiguration, relativeURL: String, method: HTTPMethod, parameters: [RequestParameter]?, bodyData: AnyObject?) throws -> NSMutableURLRequest {
+        if configuration.baseURL.isEmpty || configuration.apiKey.isEmpty {
+            throw MongoLabError.RequestError
+        }
+        
         let URLString = URLStringForBaseURL(configuration.baseURL, relativeURL: relativeURL, parameters: requiredParametersWithConfiguration(configuration, parameters: parameters))
 
         let request = NSMutableURLRequest(URL: NSURL(string: URLString)!)

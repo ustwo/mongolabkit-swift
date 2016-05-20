@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81748A761CEEBBB300487BFE /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A751CEEBBB300487BFE /* Collection.swift */; };
+		81748A791CEEBBDC00487BFE /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A751CEEBBB300487BFE /* Collection.swift */; };
+		81748A7A1CEEBBDD00487BFE /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A751CEEBBB300487BFE /* Collection.swift */; };
+		81748A7B1CEEBBDD00487BFE /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A751CEEBBB300487BFE /* Collection.swift */; };
+		81748A821CEEBC5B00487BFE /* CollectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A811CEEBC5B00487BFE /* CollectionService.swift */; };
+		81748A831CEEBC5B00487BFE /* CollectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A811CEEBC5B00487BFE /* CollectionService.swift */; };
+		81748A841CEEBC5B00487BFE /* CollectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A811CEEBC5B00487BFE /* CollectionService.swift */; };
+		81748A851CEEBC5B00487BFE /* CollectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A811CEEBC5B00487BFE /* CollectionService.swift */; };
+		81748A871CEEBDBE00487BFE /* FileCollectionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A861CEEBDBE00487BFE /* FileCollectionParser.swift */; };
+		81748A881CEEBDBE00487BFE /* FileCollectionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A861CEEBDBE00487BFE /* FileCollectionParser.swift */; };
+		81748A891CEEBDBE00487BFE /* FileCollectionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A861CEEBDBE00487BFE /* FileCollectionParser.swift */; };
+		81748A8B1CEEBF0C00487BFE /* MongoLabURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA5F1CEBEEE4008E3011 /* MongoLabURLRequest.swift */; };
+		81748A8C1CEEC11200487BFE /* ErrorDescribable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA591CEBEEE4008E3011 /* ErrorDescribable.swift */; };
+		81748A8D1CEEC11400487BFE /* MongoLabError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA5C1CEBEEE4008E3011 /* MongoLabError.swift */; };
+		81748A8E1CEEC11700487BFE /* MongoLabConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA5B1CEBEEE4008E3011 /* MongoLabConfiguration.swift */; };
+		81748A8F1CEEC11C00487BFE /* MongoLabClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA5A1CEBEEE4008E3011 /* MongoLabClient.swift */; };
+		81748A901CEEC12200487BFE /* MongoLabErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA5D1CEBEEE4008E3011 /* MongoLabErrorParser.swift */; };
+		81748A921CEEC12600487BFE /* MongoLabResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA5E1CEBEEE4008E3011 /* MongoLabResponseParser.swift */; };
+		81748A931CEEC12600487BFE /* FileCollectionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A861CEEBDBE00487BFE /* FileCollectionParser.swift */; };
 		8180CA2F1CEBEB12008E3011 /* SwiftMongoLabKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8180CA2E1CEBEB12008E3011 /* SwiftMongoLabKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8180CA531CEBED05008E3011 /* SwiftMongoLabKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8180CA2E1CEBEB12008E3011 /* SwiftMongoLabKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8180CA541CEBED06008E3011 /* SwiftMongoLabKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8180CA2E1CEBEB12008E3011 /* SwiftMongoLabKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -47,6 +66,9 @@
 
 /* Begin PBXFileReference section */
 		81748A6D1CEE9A7600487BFE /* CODE_OF_CONDUCT.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CODE_OF_CONDUCT.md; path = ../CODE_OF_CONDUCT.md; sourceTree = "<group>"; };
+		81748A751CEEBBB300487BFE /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Collection.swift; path = Sources/Classes/Collection.swift; sourceTree = "<group>"; };
+		81748A811CEEBC5B00487BFE /* CollectionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionService.swift; path = Sources/Classes/CollectionService.swift; sourceTree = "<group>"; };
+		81748A861CEEBDBE00487BFE /* FileCollectionParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileCollectionParser.swift; path = Sources/Classes/FileCollectionParser.swift; sourceTree = "<group>"; };
 		8180CA2B1CEBEB12008E3011 /* SwiftMongoLabKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftMongoLabKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8180CA2E1CEBEB12008E3011 /* SwiftMongoLabKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SwiftMongoLabKit.h; path = Sources/SwiftMongoLabKit.h; sourceTree = "<group>"; };
 		8180CA391CEBEB39008E3011 /* SwiftMongoLabKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftMongoLabKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +125,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		81748A6E1CEEBA4A00487BFE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8180CA591CEBEEE4008E3011 /* ErrorDescribable.swift */,
+				8180CA5C1CEBEEE4008E3011 /* MongoLabError.swift */,
+				8180CA5B1CEBEEE4008E3011 /* MongoLabConfiguration.swift */,
+				81748A751CEEBBB300487BFE /* Collection.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		81748A6F1CEEBA6500487BFE /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				8180CA5A1CEBEEE4008E3011 /* MongoLabClient.swift */,
+			);
+			name = Client;
+			sourceTree = "<group>";
+		};
+		81748A701CEEBA6C00487BFE /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				8180CA5D1CEBEEE4008E3011 /* MongoLabErrorParser.swift */,
+				8180CA5E1CEBEEE4008E3011 /* MongoLabResponseParser.swift */,
+				81748A861CEEBDBE00487BFE /* FileCollectionParser.swift */,
+			);
+			name = Parser;
+			sourceTree = "<group>";
+		};
+		81748A711CEEBA7800487BFE /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				8180CA5F1CEBEEE4008E3011 /* MongoLabURLRequest.swift */,
+			);
+			name = Request;
+			sourceTree = "<group>";
+		};
+		81748A721CEEBAD100487BFE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				81748A811CEEBC5B00487BFE /* CollectionService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
 		8180CA1F1CEBEA71008E3011 = {
 			isa = PBXGroup;
 			children = (
@@ -151,13 +218,11 @@
 		8180CA581CEBEEC6008E3011 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				8180CA591CEBEEE4008E3011 /* ErrorDescribable.swift */,
-				8180CA5A1CEBEEE4008E3011 /* MongoLabClient.swift */,
-				8180CA5B1CEBEEE4008E3011 /* MongoLabConfiguration.swift */,
-				8180CA5C1CEBEEE4008E3011 /* MongoLabError.swift */,
-				8180CA5D1CEBEEE4008E3011 /* MongoLabErrorParser.swift */,
-				8180CA5E1CEBEEE4008E3011 /* MongoLabResponseParser.swift */,
-				8180CA5F1CEBEEE4008E3011 /* MongoLabURLRequest.swift */,
+				81748A6E1CEEBA4A00487BFE /* Data */,
+				81748A6F1CEEBA6500487BFE /* Client */,
+				81748A721CEEBAD100487BFE /* Service */,
+				81748A711CEEBA7800487BFE /* Request */,
+				81748A701CEEBA6C00487BFE /* Parser */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -352,11 +417,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81748A761CEEBBB300487BFE /* Collection.swift in Sources */,
 				8180CA601CEBEEE4008E3011 /* ErrorDescribable.swift in Sources */,
 				8180CA6C1CEBEEE4008E3011 /* MongoLabErrorParser.swift in Sources */,
 				8180CA721CEBEEE4008E3011 /* MongoLabURLRequest.swift in Sources */,
 				8180CA631CEBEEE4008E3011 /* MongoLabClient.swift in Sources */,
 				8180CA661CEBEEE4008E3011 /* MongoLabConfiguration.swift in Sources */,
+				81748A871CEEBDBE00487BFE /* FileCollectionParser.swift in Sources */,
+				81748A821CEEBC5B00487BFE /* CollectionService.swift in Sources */,
 				8180CA6F1CEBEEE4008E3011 /* MongoLabResponseParser.swift in Sources */,
 				8180CA691CEBEEE4008E3011 /* MongoLabError.swift in Sources */,
 			);
@@ -366,11 +434,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81748A791CEEBBDC00487BFE /* Collection.swift in Sources */,
 				8180CA611CEBEEE4008E3011 /* ErrorDescribable.swift in Sources */,
 				8180CA6D1CEBEEE4008E3011 /* MongoLabErrorParser.swift in Sources */,
 				8180CA731CEBEEE4008E3011 /* MongoLabURLRequest.swift in Sources */,
 				8180CA641CEBEEE4008E3011 /* MongoLabClient.swift in Sources */,
 				8180CA671CEBEEE4008E3011 /* MongoLabConfiguration.swift in Sources */,
+				81748A881CEEBDBE00487BFE /* FileCollectionParser.swift in Sources */,
+				81748A831CEEBC5B00487BFE /* CollectionService.swift in Sources */,
 				8180CA701CEBEEE4008E3011 /* MongoLabResponseParser.swift in Sources */,
 				8180CA6A1CEBEEE4008E3011 /* MongoLabError.swift in Sources */,
 			);
@@ -380,11 +451,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81748A7A1CEEBBDD00487BFE /* Collection.swift in Sources */,
 				8180CA621CEBEEE4008E3011 /* ErrorDescribable.swift in Sources */,
 				8180CA6E1CEBEEE4008E3011 /* MongoLabErrorParser.swift in Sources */,
 				8180CA741CEBEEE4008E3011 /* MongoLabURLRequest.swift in Sources */,
 				8180CA651CEBEEE4008E3011 /* MongoLabClient.swift in Sources */,
 				8180CA681CEBEEE4008E3011 /* MongoLabConfiguration.swift in Sources */,
+				81748A891CEEBDBE00487BFE /* FileCollectionParser.swift in Sources */,
+				81748A841CEEBC5B00487BFE /* CollectionService.swift in Sources */,
 				8180CA711CEBEEE4008E3011 /* MongoLabResponseParser.swift in Sources */,
 				8180CA6B1CEBEEE4008E3011 /* MongoLabError.swift in Sources */,
 			);
@@ -394,7 +468,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81748A921CEEC12600487BFE /* MongoLabResponseParser.swift in Sources */,
+				81748A8B1CEEBF0C00487BFE /* MongoLabURLRequest.swift in Sources */,
+				81748A8C1CEEC11200487BFE /* ErrorDescribable.swift in Sources */,
+				81748A851CEEBC5B00487BFE /* CollectionService.swift in Sources */,
+				81748A8D1CEEC11400487BFE /* MongoLabError.swift in Sources */,
 				8180CAC51CEBF3B3008E3011 /* SwiftMongoLabKitTests.swift in Sources */,
+				81748A8E1CEEC11700487BFE /* MongoLabConfiguration.swift in Sources */,
+				81748A901CEEC12200487BFE /* MongoLabErrorParser.swift in Sources */,
+				81748A931CEEC12600487BFE /* FileCollectionParser.swift in Sources */,
+				81748A8F1CEEC11C00487BFE /* MongoLabClient.swift in Sources */,
+				81748A7B1CEEBBDD00487BFE /* Collection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
