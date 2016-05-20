@@ -90,9 +90,7 @@ $ pod install
 ``` swift
 let configuration = MongoLabConfiguration(baseURL: "{BASE_URL}", apiKey: "{API_KEY}")
 
-let client = MongoLabClient()
-
-let service = CollectionService(client: client, configuration: configuration, delegate: self)
+let service = CollectionService(configuration: configuration, delegate: self)
 
 service.loadCollections()
 ```

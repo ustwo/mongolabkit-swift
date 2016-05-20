@@ -17,17 +17,15 @@ protocol CollectionServiceDelegate: AnyObject {
 
 class CollectionService {
 
-    private var client: MongoLabClient
+    private let client = MongoLabClient()
 
     private var configuration: MongoLabConfiguration
 
     weak var delegate: CollectionServiceDelegate?
 
 
-    required init(client: MongoLabClient, configuration: MongoLabConfiguration, delegate: CollectionServiceDelegate) {
-        self.client = client
+    required init(configuration: MongoLabConfiguration, delegate: CollectionServiceDelegate) {
         self.configuration = configuration
-
         self.delegate = delegate
     }
 

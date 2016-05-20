@@ -14,8 +14,6 @@ class SwiftMongoLabKit_iOSTests: XCTestCase {
     func testLoadCollectionsWithEmptyConfiguration() {
         let expectation = expectationWithDescription("asynchronous")
 
-        let client = MongoLabClient()
-
         let delegate = CollectionServiceDelegateWithCompletion() {
             result in
             expectation.fulfill()
@@ -31,7 +29,7 @@ class SwiftMongoLabKit_iOSTests: XCTestCase {
 
         let configuration = MongoLabConfiguration(baseURL: "", apiKey: "")
 
-        let service = CollectionService(client: client, configuration: configuration, delegate: delegate)
+        let service = CollectionService(configuration: configuration, delegate: delegate)
 
         service.loadCollections()
 
