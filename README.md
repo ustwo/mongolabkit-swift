@@ -150,3 +150,18 @@ Please see the [Contributing to SwiftMongoLabKit guide](https://github.com/ustwo
 ## Maintainers
 
 * Developer iOS: [Luca Strazzullo](mailto:luca@ustwo.com)
+
+---
+
+## Contact
+
+[open.source@ustwo.com](mailto:open.source@ustwo.com)
+
+---
+
+## License
+
+This is a proof of concept with no guarantee of active maintenance.
+
+See [License](./LICENSE)
+
