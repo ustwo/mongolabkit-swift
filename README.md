@@ -95,7 +95,7 @@ let service = CollectionService(configuration: configuration, delegate: self)
 service.loadCollections()
 ```
 
-*An example is available [here](https://github.com/ustwo/mongolabkit-swift/SwiftMongoLabKit/SwiftMongoLabKitExamples/ViewController.swift)*
+*An example is available [here](https://github.com/ustwo/mongolabkit-swift/blob/master/SwiftMongoLabKit/SwiftMongoLabKitExamples/ViewController.swift)*
 
 ---
 
