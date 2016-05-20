@@ -145,7 +145,6 @@ switch result {
 
 ## Roadmap
 
-* Create services and parsers for creating, modifying and deleting collections
 * Create services and parsers for creating, modifying and deleting documents
 
 ---
