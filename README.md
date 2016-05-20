@@ -147,6 +147,6 @@ Please see the [Contributing to SwiftMongoLabKit guide](https://github.com/ustwo
 
 ---
 
-## Team
+## Maintainers
 
 * Developer iOS: [Luca Strazzullo](mailto:luca@ustwo.com)
