@@ -1,13 +1,13 @@
-# SwiftMongoLabKit by ustwo
+# MongoLabKit by ustwo
 ---
 
-### Welcome to SwiftMongoLabKit 
+### Welcome to MongoLabKit 
 [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/ustwo/mongolabkit-swift/blob/master/LICENSE) 
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods Compatible](https://img.shields.io/badge/Pods-compatible-4BC51D.svg?style=flat)](https://cocoapods.org)
 [![Platforms iOS | watchOS | tvOS](https://img.shields.io/badge/Platforms-iOS%20%7C%20watchOS%20%7C%20tvOS-lightgray.svg?style=flat)](https://developer.apple.com/swift/)
 
-SwiftMongoLabKit is a REST client API for iOS, tvOS and watchOS written to make REST calls to a MongoLab database.
+MongoLabKit is a REST client API for iOS, tvOS and watchOS written to make REST calls to a MongoLab database.
 
 ---
 
@@ -27,7 +27,7 @@ SwiftMongoLabKit is a REST client API for iOS, tvOS and watchOS written to make 
 Platform-specific framework projects are included in the workspace.
 
 ``` swift 
-import SwiftMongoLabKit
+import MongoLabKit
 ```
 
 ### Installation with Carthage
@@ -41,7 +41,7 @@ $ brew update
 $ brew install carthage
 ```
 
-To integrate SwiftMongoLabKit into your Xcode project using Carthage, specify it in your `Cartfile`:
+To integrate MongoLabKit into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ``` ogdl
 github "ustwo/mongolabkit-swift"
@@ -57,7 +57,7 @@ carthage update --platform watchOS
 
 ### Installation with CocoaPods
 
-[CocoaPods](http://cocoapods.org) is a dependency manager for swift and Objective-C, which automates and simplifies the process of using 3rd-party libraries like SwiftMongoLabKit in your projects. You can install it with the following command:
+[CocoaPods](http://cocoapods.org) is a dependency manager for swift and Objective-C, which automates and simplifies the process of using 3rd-party libraries like MongoLabKit in your projects. You can install it with the following command:
 
 ```bash
 $ gem install cocoapods
@@ -65,13 +65,13 @@ $ gem install cocoapods
 
 #### Podfile
 
-To integrate SwiftMongoLabKit into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate MongoLabKit into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 use_frameworks!
 
 target '{TARGET_NAME}' do
-    pod 'SwiftMongoLabKit'
+    pod 'MongoLabKit'
 end
 ```
 
@@ -95,7 +95,7 @@ let service = CollectionService(configuration: configuration, delegate: self)
 service.loadCollections()
 ```
 
-*An example is available [here](https://github.com/ustwo/mongolabkit-swift/blob/master/SwiftMongoLabKit/SwiftMongoLabKitExamples/ViewController.swift)*
+*An example is available [here](https://github.com/ustwo/mongolabkit-swift/blob/master/MongoLabKit/MongoLabKitExamples/ViewController.swift)*
 
 ---
 
@@ -154,7 +154,7 @@ switch result {
 Do you love the app and want to get involved? Or maybe you've found a bug or 
 have a new feature suggestion? Thanks! There are plenty of ways you can help.
 
-Please see the [Contributing to SwiftMongoLabKit guide](https://github.com/ustwo/mongolabkit-swift/blob/develop/CONTRIBUTING.md).
+Please see the [Contributing to MongoLabKit guide](https://github.com/ustwo/mongolabkit-swift/blob/develop/CONTRIBUTING.md).
 
 ---
 
