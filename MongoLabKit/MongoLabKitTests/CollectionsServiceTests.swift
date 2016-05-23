@@ -19,7 +19,7 @@ class MongoLabKit_iOSTests: XCTestCase {
 
         let mockResult = MongoLabClient.Result.Success(response: ["Collection 1", "Collection 2"])
 
-        loadCollectionsWithMongoLabMockResult(mockResult, configuration: mockConfiguration) {
+        loadCollectionsWithMongoLabResult(mockResult, configuration: mockConfiguration) {
             result in
 
             switch result {
@@ -45,7 +45,7 @@ class MongoLabKit_iOSTests: XCTestCase {
 
         let mockResult = MongoLabClient.Result.Success(response: ["collections": ["Collection 1", "Collection 2"]])
 
-        loadCollectionsWithMongoLabMockResult(mockResult, configuration: mockConfiguration) {
+        loadCollectionsWithMongoLabResult(mockResult, configuration: mockConfiguration) {
             result in
 
             switch result {
@@ -64,7 +64,7 @@ class MongoLabKit_iOSTests: XCTestCase {
 
         let mockResult = MongoLabClient.Result.Success(response: ["Collection 1", "Collection 2"])
 
-        loadCollectionsWithMongoLabMockResult(mockResult, configuration: mockConfiguration) {
+        loadCollectionsWithMongoLabResult(mockResult, configuration: mockConfiguration) {
             result in
 
             switch result {
@@ -80,7 +80,7 @@ class MongoLabKit_iOSTests: XCTestCase {
 
     // MARK: - Private helper methods
 
-    private func loadCollectionsWithMongoLabMockResult(mockResult: MongoLabClient.Result, configuration: MongoLabConfiguration, completion: MongoLabClient.Completion) {
+    private func loadCollectionsWithMongoLabResult(mockResult: MongoLabClient.Result, configuration: MongoLabConfiguration, completion: MongoLabClient.Completion) {
         let expectation = expectationWithDescription("asynchronous")
 
         let mockClient = MockMongoLabClient(result: mockResult)
