@@ -1,4 +1,4 @@
-# Contributing to SwiftMongoLabKit by ustwo
+# Contributing to MongoLabKit by ustwo
 
 Do you love the app and want to get involved? Or maybe you've found a bug or 
 have a new feature suggestion? Thanks! There are plenty of ways you can help.
