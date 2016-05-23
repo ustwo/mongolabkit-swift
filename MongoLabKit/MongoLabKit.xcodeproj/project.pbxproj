@@ -104,7 +104,7 @@
 		8180CABC1CEBF39F008E3011 /* MongoLabKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MongoLabKitTests.swift; sourceTree = "<group>"; };
 		8180CABE1CEBF39F008E3011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8180CAF41CEC0240008E3011 /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CONTRIBUTING.md; path = ../CONTRIBUTING.md; sourceTree = "<group>"; };
-		8189475D1CEC3E86004CC52B /* MongoLabKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = MongoLabKit.podspec; path = ../MongoLabKit.podspec; sourceTree = "<group>"; };
+		8189475D1CEC3E86004CC52B /* MongoLabKitSwift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = MongoLabKitSwift.podspec; path = ../MongoLabKitSwift.podspec; sourceTree = "<group>"; };
 		819ECB131CEEC89F000AB899 /* MongoLabKitExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MongoLabKitExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		819ECB151CEEC89F000AB899 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		819ECB171CEEC89F000AB899 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -241,7 +241,7 @@
 				8180CA571CEBEEB8008E3011 /* README.md */,
 				8180CAF41CEC0240008E3011 /* CONTRIBUTING.md */,
 				81748A6D1CEE9A7600487BFE /* CODE_OF_CONDUCT.md */,
-				8189475D1CEC3E86004CC52B /* MongoLabKit.podspec */,
+				8189475D1CEC3E86004CC52B /* MongoLabKitSwift.podspec */,
 			);
 			name = Metadata;
 			sourceTree = "<group>";

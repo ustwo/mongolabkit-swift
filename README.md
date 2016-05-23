@@ -71,7 +71,7 @@ To integrate MongoLabKit into your Xcode project using CocoaPods, specify it in 
 use_frameworks!
 
 target '{TARGET_NAME}' do
-    pod 'MongoLabKit'
+    pod 'MongoLabKitSwift'
 end
 ```
 
