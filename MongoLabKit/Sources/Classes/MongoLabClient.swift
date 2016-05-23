@@ -19,15 +19,18 @@ public class MongoLabClient {
 
     static let sharedClient = MongoLabClient()
 
-}
 
-
-extension MongoLabClient {
+    // MARK: - Public methods
+    // NOTE: - Not in the extension because is not possible to override a method in extensions yet.
 
     func performRequest(request: NSMutableURLRequest, completion: Completion) {
         dataTaskWithRequest(request, completion: completion).resume()
     }
 
+}
+
+
+extension MongoLabClient {
 
     func parseData(data: NSData?, response: NSURLResponse?, error: NSError?, completion: Completion) {
         do {
