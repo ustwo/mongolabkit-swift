@@ -9,7 +9,7 @@
 import XCTest
 @testable import MongoLabKit
 
-class MongoLabKit_iOSTests: XCTestCase {
+class MongoLabKit_CollectionService_iOSTests: XCTestCase {
 
     private var service: CollectionService?
 
@@ -80,7 +80,7 @@ class MongoLabKit_iOSTests: XCTestCase {
 
     // MARK: - Private helper methods
 
-    private func loadCollectionsWithMongoLabResult(mockResult: MongoLabClient.Result, configuration: MongoLabConfiguration, completion: MongoLabClient.Completion) {
+    private func loadCollectionsWithMongoLabResult(mockResult: MongoLabClient.Result, configuration: MongoLabConfiguration, completion: MockCollectionServiceDelegate.Completion) {
         let expectation = expectationWithDescription("asynchronous")
 
         let mockClient = MockMongoLabClient(result: mockResult)
@@ -125,23 +125,31 @@ class MongoLabKit_iOSTests: XCTestCase {
 
     class MockCollectionServiceDelegate: CollectionServiceDelegate {
 
-        private let completion: MongoLabClient.Completion
+        enum Result {
+            case Success(response: Collections)
+            case Failure(error: ErrorDescribable)
+        }
+
+        typealias Completion = (result: Result) -> ()
+
+
+        let completion: Completion
 
 
         func collectionServiceWillLoadCollection(service: CollectionService?) {}
 
 
         func collectionService(service: CollectionService?, didLoadCollections collections: Collections) {
-            completion(result: MongoLabClient.Result.Success(response: collections))
+            completion(result: Result.Success(response: collections))
         }
 
 
         func collectionService(service: CollectionService?, didFailWithError error: ErrorDescribable) {
-            completion(result: MongoLabClient.Result.Failure(error: error))
+            completion(result: Result.Failure(error: error))
         }
 
 
-        init(completion: MongoLabClient.Completion) {
+        init(completion: Completion) {
             self.completion = completion
         }
         

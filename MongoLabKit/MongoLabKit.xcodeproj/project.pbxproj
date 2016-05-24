@@ -23,6 +23,11 @@
 		811353B41CF4108700E76DD5 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811353A21CF40C8A00E76DD5 /* Document.swift */; };
 		811353B51CF4109000E76DD5 /* DocumentsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811353A81CF40E9900E76DD5 /* DocumentsParser.swift */; };
 		811353B61CF4109000E76DD5 /* DocumentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811353AC1CF40EE800E76DD5 /* DocumentParser.swift */; };
+		811353B81CF4173E00E76DD5 /* DocumentServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811353B71CF4173E00E76DD5 /* DocumentServiceTests.swift */; };
+		811353B91CF41BE600E76DD5 /* DocumentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813574371CF40BFD00FBDBEF /* DocumentService.swift */; };
+		811353BA1CF41BED00E76DD5 /* DocumentsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811353A81CF40E9900E76DD5 /* DocumentsParser.swift */; };
+		811353BB1CF41BED00E76DD5 /* DocumentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811353AC1CF40EE800E76DD5 /* DocumentParser.swift */; };
+		811353BC1CF41BF400E76DD5 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811353A21CF40C8A00E76DD5 /* Document.swift */; };
 		813574381CF40BFD00FBDBEF /* DocumentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813574371CF40BFD00FBDBEF /* DocumentService.swift */; };
 		81748A761CEEBBB300487BFE /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A751CEEBBB300487BFE /* Collection.swift */; };
 		81748A791CEEBBDC00487BFE /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A751CEEBBB300487BFE /* Collection.swift */; };
@@ -67,7 +72,7 @@
 		8180CA731CEBEEE4008E3011 /* MongoLabURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA5F1CEBEEE4008E3011 /* MongoLabURLRequest.swift */; };
 		8180CA741CEBEEE4008E3011 /* MongoLabURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA5F1CEBEEE4008E3011 /* MongoLabURLRequest.swift */; };
 		8180CABF1CEBF39F008E3011 /* MongoLabKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8180CA2B1CEBEB12008E3011 /* MongoLabKit.framework */; };
-		8180CAC51CEBF3B3008E3011 /* CollectionsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CABC1CEBF39F008E3011 /* CollectionsServiceTests.swift */; };
+		8180CAC51CEBF3B3008E3011 /* CollectionServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CABC1CEBF39F008E3011 /* CollectionServiceTests.swift */; };
 		819ECB161CEEC89F000AB899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819ECB151CEEC89F000AB899 /* AppDelegate.swift */; };
 		819ECB181CEEC89F000AB899 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819ECB171CEEC89F000AB899 /* ViewController.swift */; };
 		819ECB1B1CEEC89F000AB899 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 819ECB191CEEC89F000AB899 /* Main.storyboard */; };
@@ -99,6 +104,7 @@
 		811353A21CF40C8A00E76DD5 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Document.swift; path = Sources/Classes/Document.swift; sourceTree = "<group>"; };
 		811353A81CF40E9900E76DD5 /* DocumentsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DocumentsParser.swift; path = Sources/Classes/DocumentsParser.swift; sourceTree = "<group>"; };
 		811353AC1CF40EE800E76DD5 /* DocumentParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DocumentParser.swift; path = Sources/Classes/DocumentParser.swift; sourceTree = "<group>"; };
+		811353B71CF4173E00E76DD5 /* DocumentServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentServiceTests.swift; sourceTree = "<group>"; };
 		813574371CF40BFD00FBDBEF /* DocumentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DocumentService.swift; path = Sources/Classes/DocumentService.swift; sourceTree = "<group>"; };
 		81748A6D1CEE9A7600487BFE /* CODE_OF_CONDUCT.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CODE_OF_CONDUCT.md; path = ../CODE_OF_CONDUCT.md; sourceTree = "<group>"; };
 		81748A751CEEBBB300487BFE /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Collection.swift; path = Sources/Classes/Collection.swift; sourceTree = "<group>"; };
@@ -121,7 +127,7 @@
 		8180CA5E1CEBEEE4008E3011 /* MongoLabResponseParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MongoLabResponseParser.swift; path = Sources/Classes/MongoLabResponseParser.swift; sourceTree = "<group>"; };
 		8180CA5F1CEBEEE4008E3011 /* MongoLabURLRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MongoLabURLRequest.swift; path = Sources/Classes/MongoLabURLRequest.swift; sourceTree = "<group>"; };
 		8180CABA1CEBF39F008E3011 /* MongoLabKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MongoLabKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8180CABC1CEBF39F008E3011 /* CollectionsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsServiceTests.swift; sourceTree = "<group>"; };
+		8180CABC1CEBF39F008E3011 /* CollectionServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionServiceTests.swift; sourceTree = "<group>"; };
 		8180CABE1CEBF39F008E3011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8180CAF41CEC0240008E3011 /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CONTRIBUTING.md; path = ../CONTRIBUTING.md; sourceTree = "<group>"; };
 		8189475D1CEC3E86004CC52B /* MongoLabKitSwift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = MongoLabKitSwift.podspec; path = ../MongoLabKitSwift.podspec; sourceTree = "<group>"; };
@@ -320,7 +326,8 @@
 		8180CABB1CEBF39F008E3011 /* MongoLabKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				8180CABC1CEBF39F008E3011 /* CollectionsServiceTests.swift */,
+				8180CABC1CEBF39F008E3011 /* CollectionServiceTests.swift */,
+				811353B71CF4173E00E76DD5 /* DocumentServiceTests.swift */,
 				8180CABE1CEBF39F008E3011 /* Info.plist */,
 			);
 			path = MongoLabKitTests;
@@ -616,8 +623,13 @@
 				81748A8B1CEEBF0C00487BFE /* MongoLabURLRequest.swift in Sources */,
 				81748A8C1CEEC11200487BFE /* ErrorDescribable.swift in Sources */,
 				81748A851CEEBC5B00487BFE /* CollectionService.swift in Sources */,
+				811353B91CF41BE600E76DD5 /* DocumentService.swift in Sources */,
+				811353BB1CF41BED00E76DD5 /* DocumentParser.swift in Sources */,
+				811353B81CF4173E00E76DD5 /* DocumentServiceTests.swift in Sources */,
 				81748A8D1CEEC11400487BFE /* MongoLabError.swift in Sources */,
-				8180CAC51CEBF3B3008E3011 /* CollectionsServiceTests.swift in Sources */,
+				811353BC1CF41BF400E76DD5 /* Document.swift in Sources */,
+				811353BA1CF41BED00E76DD5 /* DocumentsParser.swift in Sources */,
+				8180CAC51CEBF3B3008E3011 /* CollectionServiceTests.swift in Sources */,
 				81748A8E1CEEC11700487BFE /* MongoLabConfiguration.swift in Sources */,
 				81748A901CEEC12200487BFE /* MongoLabErrorParser.swift in Sources */,
 				81748A8F1CEEC11C00487BFE /* MongoLabClient.swift in Sources */,
