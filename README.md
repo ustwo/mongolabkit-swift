@@ -83,6 +83,10 @@ $ pod install
 
 ---
 
+## Usage
+
+*An example is available [here](https://github.com/ustwo/mongolabkit-swift/blob/master/MongoLabKit/MongoLabKitExamples/ViewController.swift)*
+
 ## Usage with service
 
 ### Listing collections
@@ -95,7 +99,31 @@ let service = CollectionService(configuration: configuration, delegate: self)
 service.loadCollections()
 ```
 
-*An example is available [here](https://github.com/ustwo/mongolabkit-swift/blob/master/MongoLabKit/MongoLabKitExamples/ViewController.swift)*
+---
+
+### Listing documents in a collection
+
+``` swift
+let configuration = MongoLabConfiguration(baseURL: "{BASE_URL}", apiKey: "{API_KEY}")
+
+let service = DocumentService(configuration: configuration, delegate: self)
+
+service.loadDocumentsForCollection(Collection("{COLLECTION_NAME}"))
+```
+
+---
+
+### Adding a document in a collection
+
+``` swift
+let configuration = MongoLabConfiguration(baseURL: "{BASE_URL}", apiKey: "{API_KEY}")
+
+let document = Document(payload: {JSON_OBJECT})
+
+let service = DocumentService(configuration: configuration, delegate: self)
+
+service.addDocument(document, inCollection: Collection("{COLLECTION_NAME}"))
+```
 
 ---
 
@@ -109,7 +137,7 @@ let configuration = MongoLabConfiguration(baseURL: "{BASE_URL}", apiKey: "{API_K
 let parameter1 = MongoLabURLRequest.RequestParameter(parameter: "{PARAMETER_NAME}", value: "{PARAMETER_VALUE}")
 let parameter2 = MongoLabURLRequest.RequestParameter(parameter: "{PARAMETER_NAME}", value: "{PARAMETER_VALUE}")
 
-let request = MongoLabURLRequest.URLRequestWithConfiguration(configuration, relativeURL: "collections/[COLLECTION_NAME]", method: .GET, parameters: [parameter1, parameter2], bodyData: nil)
+let request = try MongoLabURLRequest.URLRequestWithConfiguration(configuration, relativeURL: "collections/[COLLECTION_NAME]", method: .GET, parameters: [parameter1, parameter2], bodyData: nil)
 ```
 
 ### Creating a POST request with body data
@@ -119,7 +147,7 @@ let configuration = MongoLabConfiguration(baseURL: "{BASE_URL}", apiKey: "{API_K
 
 let body: [String: AnyObject] = [{PARAMETER_KEY}: [{PARAMETER_KEY}: {PARAMETER_VALUE}]]
 
-let request = MongoLabURLRequest.URLRequestWithConfiguration(configuration, relativeURL: "collections/[COLLECTION_NAME]", method: .POST, parameters: [], bodyData: body)
+let request = try MongoLabURLRequest.URLRequestWithConfiguration(configuration, relativeURL: "collections/[COLLECTION_NAME]", method: .POST, parameters: [], bodyData: body)
 ```
 
 ### Making REST call
@@ -145,7 +173,8 @@ switch result {
 
 ## Roadmap
 
-* Create services and parsers for creating, modifying and deleting documents
+* *DocumentService*: Modify document with id in collection
+* *DocumentService*: Delete document with id in collection
 
 ---
 
