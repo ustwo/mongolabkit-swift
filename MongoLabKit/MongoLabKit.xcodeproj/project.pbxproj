@@ -154,6 +154,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8135742D1CF3D4BE00FBDBEF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				813574321CF3DB5300FBDBEF /* Storyboard */,
+				819ECB1C1CEEC89F000AB899 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		8135742E1CF3D4C400FBDBEF /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				819ECB211CEEC89F000AB899 /* Info.plist */,
+			);
+			name = "Supporting files";
+			sourceTree = "<group>";
+		};
+		8135742F1CF3D4CD00FBDBEF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				819ECB151CEEC89F000AB899 /* AppDelegate.swift */,
+				819ECB171CEEC89F000AB899 /* ViewController.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		813574321CF3DB5300FBDBEF /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				819ECB191CEEC89F000AB899 /* Main.storyboard */,
+				819ECB1E1CEEC89F000AB899 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
 		81748A6E1CEEBA4A00487BFE /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,12 +305,9 @@
 		819ECB141CEEC89F000AB899 /* MongoLabKitExamples */ = {
 			isa = PBXGroup;
 			children = (
-				819ECB151CEEC89F000AB899 /* AppDelegate.swift */,
-				819ECB171CEEC89F000AB899 /* ViewController.swift */,
-				819ECB191CEEC89F000AB899 /* Main.storyboard */,
-				819ECB1C1CEEC89F000AB899 /* Assets.xcassets */,
-				819ECB1E1CEEC89F000AB899 /* LaunchScreen.storyboard */,
-				819ECB211CEEC89F000AB899 /* Info.plist */,
+				8135742F1CF3D4CD00FBDBEF /* Classes */,
+				8135742D1CF3D4BE00FBDBEF /* Resources */,
+				8135742E1CF3D4C400FBDBEF /* Supporting files */,
 			);
 			path = MongoLabKitExamples;
 			sourceTree = "<group>";
