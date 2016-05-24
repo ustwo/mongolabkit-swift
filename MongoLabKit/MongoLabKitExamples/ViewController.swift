@@ -14,7 +14,9 @@ class ViewController: UIViewController {
 
     private let client = MongoLabClient()
 
-    private var service: CollectionService?
+    private var collectionService: CollectionService?
+
+    private var documentService: DocumentService?
 
 }
 
@@ -77,9 +79,9 @@ extension ViewController {
 
 extension ViewController {
 
-    @IBAction func listCollections() {
-        service = CollectionService(configuration: configuration, delegate: self)
-        service?.loadCollections()
+    @IBAction func listCollectionsWithService() {
+        collectionService = CollectionService(configuration: configuration, delegate: self)
+        collectionService?.loadCollections()
     }
 
 }
@@ -98,6 +100,39 @@ extension ViewController: CollectionServiceDelegate {
 
 
     func collectionService(service: CollectionService?, didFailWithError error: ErrorDescribable) {
+        print("Error: \(error.description())")
+    }
+    
+}
+
+
+// ------------------
+// Document Service
+// ------------------
+
+extension ViewController {
+
+    @IBAction func listDocumentsWithService() {
+        documentService = DocumentService(configuration: configuration, delegate: self)
+        documentService?.loadDocumentsForCollection(Collection("randoms"))
+    }
+
+}
+
+
+extension ViewController: DocumentServiceDelegate {
+
+    func documentService(service: DocumentService?, willLoadDocumentsInCollection collection: Collection) {
+        print("Loading Documents in collection: \(collection)")
+    }
+
+
+    func documentService(service: DocumentService?, didLoadDocuments documents: Documents, inCollection collection: Collection) {
+        print("Documents loaded: \(documents) in collection: \(collection)")
+    }
+
+
+    func documentService(service: DocumentService?, didFailWithError error: ErrorDescribable) {
         print("Error: \(error.description())")
     }
     
