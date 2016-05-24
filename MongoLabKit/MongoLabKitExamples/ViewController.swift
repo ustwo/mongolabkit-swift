@@ -14,7 +14,9 @@ class ViewController: UIViewController {
 
     private let client = MongoLabClient()
 
-    private var service: CollectionService?
+    private var collectionService: CollectionService?
+
+    private var documentService: DocumentService?
 
 }
 
@@ -37,6 +39,18 @@ extension ViewController {
                 print("Error \(error)")
 
             }
+        }
+    }
+
+
+    @IBAction func listCollections() {
+        do {
+            let request = try MongoLabURLRequest.URLRequestWithConfiguration(configuration, relativeURL: "collections", method: .GET, parameters: [], bodyData: nil)
+
+            performRequest(request)
+
+        } catch let error {
+            print("Error \((error as? ErrorDescribable ?? MongoLabError.RequestError).description())")
         }
     }
 
@@ -77,9 +91,9 @@ extension ViewController {
 
 extension ViewController {
 
-    @IBAction func listCollections() {
-        service = CollectionService(configuration: configuration, delegate: self)
-        service?.loadCollections()
+    @IBAction func listCollectionsWithService() {
+        collectionService = CollectionService(configuration: configuration, delegate: self)
+        collectionService?.loadCollections()
     }
 
 }
@@ -98,6 +112,57 @@ extension ViewController: CollectionServiceDelegate {
 
 
     func collectionService(service: CollectionService?, didFailWithError error: ErrorDescribable) {
+        print("Error: \(error.description())")
+    }
+    
+}
+
+
+// ------------------
+// Document Service
+// ------------------
+
+extension ViewController {
+
+    @IBAction func listDocumentsWithService() {
+        documentService = DocumentService(configuration: configuration, delegate: self)
+        documentService?.loadDocumentsForCollection(Collection("randoms"))
+    }
+
+
+    @IBAction func addDocumentWithService() {
+        let document = Document(id: NSUUID().UUIDString, payload: ["active": true])
+
+        documentService = DocumentService(configuration: configuration, delegate: self)
+        documentService?.addDocument(document, inCollection: Collection("randoms"))
+    }
+
+}
+
+
+extension ViewController: DocumentServiceDelegate {
+
+    func documentService(service: DocumentService?, willLoadDocumentsInCollection collection: Collection) {
+        print("Loading Documents in collection: \(collection)")
+    }
+
+
+    func documentService(service: DocumentService?, didLoadDocuments documents: Documents, inCollection collection: Collection) {
+        print("Documents loaded: \(documents) in collection: \(collection)")
+    }
+
+
+    func documentService(service: DocumentService?, willAddDocumentInCollection collection: Collection) {
+        print("Adding Document in collection: \(collection)")
+    }
+
+
+    func documentService(service: DocumentService?, didAddDocument document: Document, inCollection collection: Collection) {
+        print("Document added: \(document) in collection: \(collection)")
+    }
+
+
+    func documentService(service: DocumentService?, didFailWithError error: ErrorDescribable) {
         print("Error: \(error.description())")
     }
     
