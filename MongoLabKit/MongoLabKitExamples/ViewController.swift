@@ -43,6 +43,18 @@ extension ViewController {
     }
 
 
+    @IBAction func listCollections() {
+        do {
+            let request = try MongoLabURLRequest.URLRequestWithConfiguration(configuration, relativeURL: "collections", method: .GET, parameters: [], bodyData: nil)
+
+            performRequest(request)
+
+        } catch let error {
+            print("Error \((error as? ErrorDescribable ?? MongoLabError.RequestError).description())")
+        }
+    }
+
+
     @IBAction func insertDocument() {
         do {
             let body: [String: AnyObject] = ["UUID": NSUUID().UUIDString, "active": true]
@@ -117,6 +129,14 @@ extension ViewController {
         documentService?.loadDocumentsForCollection(Collection("randoms"))
     }
 
+
+    @IBAction func addDocumentWithService() {
+        let document = Document(id: NSUUID().UUIDString, payload: ["active": true])
+
+        documentService = DocumentService(configuration: configuration, delegate: self)
+        documentService?.addDocument(document, inCollection: Collection("randoms"))
+    }
+
 }
 
 
@@ -129,6 +149,16 @@ extension ViewController: DocumentServiceDelegate {
 
     func documentService(service: DocumentService?, didLoadDocuments documents: Documents, inCollection collection: Collection) {
         print("Documents loaded: \(documents) in collection: \(collection)")
+    }
+
+
+    func documentService(service: DocumentService?, willAddDocumentInCollection collection: Collection) {
+        print("Adding Document in collection: \(collection)")
+    }
+
+
+    func documentService(service: DocumentService?, didAddDocument document: Document, inCollection collection: Collection) {
+        print("Document added: \(document) in collection: \(collection)")
     }
 
 

@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="ATe-JA-W5s">
-                                <rect key="frame" x="231" y="169" width="139" height="262"/>
+                                <rect key="frame" x="231" y="154" width="139" height="322"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Yq7-Cg-uhM">
                                         <rect key="frame" x="0.0" y="0.0" width="139" height="51"/>
@@ -39,7 +39,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5Dr-KK-Z31">
-                                        <rect key="frame" x="0.0" y="91" width="139" height="51"/>
+                                        <rect key="frame" x="0.0" y="91" width="139" height="81"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Document service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQh-pq-Y1i">
                                                 <rect key="frame" x="0.0" y="0.0" width="139" height="21"/>
@@ -54,10 +54,17 @@
                                                     <action selector="listDocumentsWithService" destination="BYZ-38-t0r" eventType="touchUpInside" id="xIi-Wx-snw"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7GH-9g-7Lp">
+                                                <rect key="frame" x="0.0" y="51" width="139" height="30"/>
+                                                <state key="normal" title="add document"/>
+                                                <connections>
+                                                    <action selector="addDocumentWithService" destination="BYZ-38-t0r" eventType="touchUpInside" id="bGE-0m-mYA"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sKZ-b0-b9o">
-                                        <rect key="frame" x="0.0" y="181" width="139" height="81"/>
+                                        <rect key="frame" x="0.0" y="211" width="139" height="111"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Custom requests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Cb-ot-SYr">
                                                 <rect key="frame" x="0.0" y="0.0" width="139" height="21"/>
@@ -67,9 +74,9 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nnn-0V-MPW">
                                                 <rect key="frame" x="0.0" y="21" width="139" height="30"/>
-                                                <state key="normal" title="add document"/>
+                                                <state key="normal" title="list collections"/>
                                                 <connections>
-                                                    <action selector="insertDocument" destination="BYZ-38-t0r" eventType="touchUpInside" id="8yK-ub-1K1"/>
+                                                    <action selector="listCollections" destination="BYZ-38-t0r" eventType="touchUpInside" id="i3c-u2-K1b"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHW-NA-fwZ">
@@ -77,6 +84,13 @@
                                                 <state key="normal" title="list documents"/>
                                                 <connections>
                                                     <action selector="listDocuments" destination="BYZ-38-t0r" eventType="touchUpInside" id="bXt-oC-4GG"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaq-Gu-fxc">
+                                                <rect key="frame" x="0.0" y="81" width="139" height="30"/>
+                                                <state key="normal" title="add document"/>
+                                                <connections>
+                                                    <action selector="insertDocument" destination="BYZ-38-t0r" eventType="touchUpInside" id="jgS-xc-LIM"/>
                                                 </connections>
                                             </button>
                                         </subviews>
