@@ -83,6 +83,10 @@ $ pod install
 
 ---
 
+## Usage
+
+*An example is available [here](https://github.com/ustwo/mongolabkit-swift/blob/master/MongoLabKit/MongoLabKitExamples/ViewController.swift)*
+
 ## Usage with service
 
 ### Listing collections
@@ -95,7 +99,31 @@ let service = CollectionService(configuration: configuration, delegate: self)
 service.loadCollections()
 ```
 
-*An example is available [here](https://github.com/ustwo/mongolabkit-swift/blob/master/MongoLabKit/MongoLabKitExamples/ViewController.swift)*
+---
+
+### Listing documents in a collection
+
+``` swift
+let configuration = MongoLabConfiguration(baseURL: "{BASE_URL}", apiKey: "{API_KEY}")
+
+let service = DocumentService(configuration: configuration, delegate: self)
+
+service.loadDocumentsForCollection(Collection("{COLLECTION_NAME}"))
+```
+
+---
+
+### Adding a document in a collection
+
+``` swift
+let configuration = MongoLabConfiguration(baseURL: "{BASE_URL}", apiKey: "{API_KEY}")
+
+let document = Document(payload: {JSON_OBJECT})
+
+let service = DocumentService(configuration: configuration, delegate: self)
+
+service.addDocument(document, inCollection: Collection("{COLLECTION_NAME}"))
+```
 
 ---
 
@@ -145,7 +173,8 @@ switch result {
 
 ## Roadmap
 
-* Create services and parsers for creating, modifying and deleting documents
+* *DocumentService*: Modify document with id in collection
+* *DocumentService*: Delete document with id in collection
 
 ---
 

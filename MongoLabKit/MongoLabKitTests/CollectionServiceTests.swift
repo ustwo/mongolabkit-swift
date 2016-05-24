@@ -24,12 +24,6 @@ class MongoLabKit_CollectionService_iOSTests: XCTestCase {
 
             switch result {
             case let .Success(response):
-                guard let response = response as? [String] else {
-                    XCTFail()
-
-                    return
-                }
-
                 XCTAssertEqual(response, Collections(arrayLiteral: Collection("Collection 1"), Collection("Collection 2")))
 
             case let .Failure(error):
