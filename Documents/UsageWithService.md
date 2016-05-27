@@ -67,15 +67,14 @@ let request = try MongoLabURLRequest.URLRequestWithConfiguration(configuration, 
 let client = MongoLabClient()
 
 client.performRequest(request) {
-result in
+    result in
 
-switch result {
-case let .Success(response):
-print("Success \(response)")
+    switch result {
+        case let .Success(response):
+        print("Success \(response)")
 
-case let .Failure(error):
-print("Error \(error)")
-
-}
+        case let .Failure(error):
+        print("Error \(error)")
+    }
 }
 ```

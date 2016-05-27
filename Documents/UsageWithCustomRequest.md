@@ -1,47 +1,3 @@
-## Usage
-
-*An example is available [here](../MongoLabKit/MongoLabKitExamples/ViewController.swift)*
-
-## Usage with service
-
-### Listing collections
-
-``` swift
-let configuration = MongoLabConfiguration(baseURL: "{BASE_URL}", apiKey: "{API_KEY}")
-
-let service = CollectionService(configuration: configuration, delegate: self)
-
-service.loadCollections()
-```
-
----
-
-### Listing documents in a collection
-
-``` swift
-let configuration = MongoLabConfiguration(baseURL: "{BASE_URL}", apiKey: "{API_KEY}")
-
-let service = DocumentService(configuration: configuration, delegate: self)
-
-service.loadDocumentsForCollection(Collection("{COLLECTION_NAME}"))
-```
-
----
-
-### Adding a document in a collection
-
-``` swift
-let configuration = MongoLabConfiguration(baseURL: "{BASE_URL}", apiKey: "{API_KEY}")
-
-let document = Document(payload: {JSON_OBJECT})
-
-let service = DocumentService(configuration: configuration, delegate: self)
-
-service.addDocument(document, inCollection: Collection("{COLLECTION_NAME}"))
-```
-
----
-
 ## Usage with custom requests
 
 ### Creating a GET request with query string parameters
@@ -73,13 +29,12 @@ let client = MongoLabClient()
 client.performRequest(request) {
 result in
 
-switch result {
-case let .Success(response):
-print("Success \(response)")
+    switch result {
+        case let .Success(response):
+        print("Success \(response)")
 
-case let .Failure(error):
-print("Error \(error)")
-
-}
+        case let .Failure(error):
+        print("Error \(error)")
+    }
 }
 ```
