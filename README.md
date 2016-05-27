@@ -14,7 +14,10 @@ MongoLabKit is a REST client API for iOS, tvOS and watchOS written to make REST 
 ## ToC
 
 * [Integration](./Documents/Integration.md)
-* [Usage](./Documents/Usage.md)
+* [Usage with service](./Documents/UsageWithService.md)
+* [Usage with custom request](./Documents/UsageWithCustomRequest.md)
+* [Changelog](./CHANGELOG.md)
+* [Examples](./MongoLabKit/MongoLabKitExamples)
 
 ## Requirements 
 
@@ -28,13 +31,6 @@ MongoLabKit is a REST client API for iOS, tvOS and watchOS written to make REST 
 - iOS
 - tvOS
 - watchOS
-
----
-
-## Roadmap
-
-* *DocumentService*: Modify document with id in collection
-* *DocumentService*: Delete document with id in collection
 
 ---
 

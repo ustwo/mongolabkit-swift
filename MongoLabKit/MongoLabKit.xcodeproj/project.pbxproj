@@ -106,7 +106,9 @@
 		811353AC1CF40EE800E76DD5 /* DocumentParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DocumentParser.swift; path = Sources/Classes/DocumentParser.swift; sourceTree = "<group>"; };
 		811353B71CF4173E00E76DD5 /* DocumentServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentServiceTests.swift; sourceTree = "<group>"; };
 		811353BE1CF7C31A00E76DD5 /* Integration.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = Integration.md; path = ../Documents/Integration.md; sourceTree = "<group>"; };
-		811353BF1CF7C38500E76DD5 /* Usage.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = Usage.md; path = ../Documents/Usage.md; sourceTree = "<group>"; };
+		811353BF1CF7C38500E76DD5 /* UsageWithService.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = UsageWithService.md; path = ../Documents/UsageWithService.md; sourceTree = "<group>"; };
+		811353C11CF7E85500E76DD5 /* UsageWithCustomRequest.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = UsageWithCustomRequest.md; path = ../Documents/UsageWithCustomRequest.md; sourceTree = "<group>"; };
+		811353C21CF7F38F00E76DD5 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		813574371CF40BFD00FBDBEF /* DocumentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DocumentService.swift; path = Sources/Classes/DocumentService.swift; sourceTree = "<group>"; };
 		81748A6D1CEE9A7600487BFE /* CODE_OF_CONDUCT.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CODE_OF_CONDUCT.md; path = ../CODE_OF_CONDUCT.md; sourceTree = "<group>"; };
 		81748A751CEEBBB300487BFE /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Collection.swift; path = Sources/Classes/Collection.swift; sourceTree = "<group>"; };
@@ -186,7 +188,8 @@
 			isa = PBXGroup;
 			children = (
 				811353BE1CF7C31A00E76DD5 /* Integration.md */,
-				811353BF1CF7C38500E76DD5 /* Usage.md */,
+				811353BF1CF7C38500E76DD5 /* UsageWithService.md */,
+				811353C11CF7E85500E76DD5 /* UsageWithCustomRequest.md */,
 			);
 			name = Documents;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				8180CA571CEBEEB8008E3011 /* README.md */,
 				8180CAF41CEC0240008E3011 /* CONTRIBUTING.md */,
 				81748A6D1CEE9A7600487BFE /* CODE_OF_CONDUCT.md */,
+				811353C21CF7F38F00E76DD5 /* CHANGELOG.md */,
 				8189475D1CEC3E86004CC52B /* MongoLabKitSwift.podspec */,
 			);
 			name = Metadata;
