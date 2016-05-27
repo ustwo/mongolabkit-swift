@@ -24,8 +24,8 @@ MongoLabKit is a REST client API for iOS, tvOS and watchOS written to make REST 
 
 ## ToC
 
-[Integration](./Documents/Integration.md)
-[Usage](./Documents/Usage.md)
+* [Integration](./Documents/Integration.md)
+* [Usage](./Documents/Usage.md)
 
 ---
 
