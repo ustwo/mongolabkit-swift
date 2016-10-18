@@ -17,9 +17,10 @@ class MongoLabKit_DocumentService_iOSTests: XCTestCase {
     func testLoadDocuments() {
         let mockConfiguration = MongoLabConfiguration(baseURL: "fakeURL", apiKey: "fakeApiKey")
 
-        let mockResult = MongoLabClient.Result.Success(response: [["_id": ["$oid": "5743ab370a00b27cd1d10c92"]]])
+        let response = [["_id": ["$oid": "5743ab370a00b27cd1d10c92"]]]
+        let mockResult = MongoLabClient.Result.success(response: response as AnyObject)
 
-        loadDocumentsWithMongoLabResult(mockResult, configuration: mockConfiguration) {
+        loadDocumentsWithMongoLab(mockResult: mockResult, configuration: mockConfiguration) {
             result in
 
             switch result {
@@ -37,9 +38,10 @@ class MongoLabKit_DocumentService_iOSTests: XCTestCase {
     func testLoadDocumentsWithParsingError() {
         let mockConfiguration = MongoLabConfiguration(baseURL: "fakeURL", apiKey: "fakeApiKey")
 
-        let mockResult = MongoLabClient.Result.Success(response: [["$oid": "5743ab370a00b27cd1d10c92"]])
+        let response = [["$oid": "5743ab370a00b27cd1d10c92"]]
+        let mockResult = MongoLabClient.Result.success(response: response as AnyObject)
 
-        loadDocumentsWithMongoLabResult(mockResult, configuration: mockConfiguration) {
+        loadDocumentsWithMongoLab(mockResult: mockResult, configuration: mockConfiguration) {
             result in
 
             switch result {
@@ -47,7 +49,7 @@ class MongoLabKit_DocumentService_iOSTests: XCTestCase {
                 XCTFail()
 
             case let .Failure(error):
-                XCTAssertEqual(error.description(), MongoLabError.ParserError.description())
+                XCTAssertEqual(error.description(), MongoLabError.parserError.description())
             }
         }
     }
@@ -56,9 +58,10 @@ class MongoLabKit_DocumentService_iOSTests: XCTestCase {
     func testLoadDocumentsWithConfigurationError() {
         let mockConfiguration = MongoLabConfiguration(baseURL: "", apiKey: "")
 
-        let mockResult = MongoLabClient.Result.Success(response: [["$oid": "5743ab370a00b27cd1d10c92"]])
+        let response = [["$oid": "5743ab370a00b27cd1d10c92"]]
+        let mockResult = MongoLabClient.Result.success(response: response as AnyObject)
 
-        loadDocumentsWithMongoLabResult(mockResult, configuration: mockConfiguration) {
+        loadDocumentsWithMongoLab(mockResult: mockResult, configuration: mockConfiguration) {
             result in
 
             switch result {
@@ -66,7 +69,7 @@ class MongoLabKit_DocumentService_iOSTests: XCTestCase {
                 XCTFail()
 
             case let .Failure(error):
-                XCTAssertEqual(error.description(), MongoLabError.RequestError.description())
+                XCTAssertEqual(error.description(), MongoLabError.requestError.description())
             }
         }
     }
@@ -74,27 +77,27 @@ class MongoLabKit_DocumentService_iOSTests: XCTestCase {
 
     // MARK: - Private helper methods
 
-    private func loadDocumentsWithMongoLabResult(mockResult: MongoLabClient.Result, configuration: MongoLabConfiguration, completion: MockDocumentServiceDelegate.Completion) {
-        let expectation = expectationWithDescription("asynchronous")
+    private func loadDocumentsWithMongoLab(mockResult: MongoLabClient.Result, configuration: MongoLabConfiguration, completion: @escaping MockDocumentServiceDelegate.Completion) {
+        let asynchronousExpectation = expectation(description: "asynchronous")
 
         let mockClient = MockMongoLabClient(result: mockResult)
 
         let mockDelegate = MockDocumentServiceDelegate() {
             result in
-            expectation.fulfill()
+            asynchronousExpectation.fulfill()
 
-            completion(result: result)
+            completion(result)
         }
 
-        loadDocumentsWithClient(mockClient, configuration: configuration, delegate: mockDelegate)
+        loadDocumentsWith(client: mockClient, configuration: configuration, delegate: mockDelegate)
         
-        waitForExpectationsWithTimeout(10, handler: nil)
+        waitForExpectations(timeout: 10, handler: nil)
     }
 
 
-    private func loadDocumentsWithClient(client: MongoLabClient, configuration: MongoLabConfiguration, delegate: DocumentServiceDelegate) {
+    private func loadDocumentsWith(client: MongoLabClient, configuration: MongoLabConfiguration, delegate: DocumentServiceDelegate) {
         service = DocumentService(client: client, configuration: configuration, delegate: delegate)
-        service?.loadDocumentsForCollection("collection")
+        service?.loadDocumentsFor("collection")
     }
 
 
@@ -108,8 +111,8 @@ class MongoLabKit_DocumentService_iOSTests: XCTestCase {
             self.result = result
         }
 
-        override func performRequest(request: NSMutableURLRequest, completion: MongoLabClient.Completion) {
-            completion(result: result)
+        override func perform(_ request: URLRequest, completion: @escaping MongoLabClient.Completion) {
+            completion(result)
         }
 
     }
@@ -124,32 +127,32 @@ class MongoLabKit_DocumentService_iOSTests: XCTestCase {
             case Failure(error: ErrorDescribable)
         }
 
-        typealias Completion = (result: Result) -> ()
+        typealias Completion = (_ result: Result) -> ()
 
 
         let completion: Completion
 
 
-        func documentService(service: DocumentService?, willLoadDocumentsInCollection collection: Collection) {}
+        func documentService(_ service: DocumentService?, willLoadDocumentsInCollection collection: Collection) {}
 
 
-        func documentService(service: DocumentService?, didLoadDocuments documents: Documents, inCollection collection: Collection) {
-            completion(result: Result.Success(response: documents))
+        func documentService(_ service: DocumentService?, didLoadDocuments documents: Documents, inCollection collection: Collection) {
+            completion(Result.Success(response: documents))
         }
 
 
-        func documentService(service: DocumentService?, willAddDocumentInCollection collection: Collection) {}
+        func documentService(_ service: DocumentService?, willAddDocumentInCollection collection: Collection) {}
 
 
-        func documentService(service: DocumentService?, didAddDocument document: Document, inCollection collection: Collection) {}
+        func documentService(_ service: DocumentService?, didAddDocument document: Document, inCollection collection: Collection) {}
 
 
-        func documentService(service: DocumentService?, didFailWithError error: ErrorDescribable) {
-            completion(result: Result.Failure(error: error))
+        func documentService(_ service: DocumentService?, didFailWithError error: ErrorDescribable) {
+            completion(Result.Failure(error: error))
         }
 
 
-        init(completion: Completion) {
+        init(completion: @escaping Completion) {
             self.completion = completion
         }
         

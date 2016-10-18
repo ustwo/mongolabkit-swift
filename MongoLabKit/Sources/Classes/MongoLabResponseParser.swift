@@ -10,28 +10,28 @@ import Foundation
 
 class MongoLabResponseParser {
 
-    func parseData(data: NSData?, response: NSURLResponse?, error: NSError?) throws -> AnyObject {
+    func parse(_ data: Data?, response: URLResponse?, error: Error?) throws -> AnyObject {
         if error != nil {
-            throw MongoLabError.ConnectionError
+            throw MongoLabError.connectionError
         }
 
-        guard let httpResponse = response as? NSHTTPURLResponse else {
-            throw MongoLabError.ConnectionError
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw MongoLabError.connectionError
         }
 
         if httpResponse.statusCode != 200 && httpResponse.statusCode != 201 {
-            throw try MongoLabErrorParser().errorFromData(data, statusCode: httpResponse.statusCode)
+            throw try MongoLabErrorParser().errorFrom(data, statusCode: httpResponse.statusCode)
         }
 
         guard let data = data else {
-            throw MongoLabError.ParserError
+            throw MongoLabError.parserError
         }
 
-        guard let jsonObject = try? NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) else {
-            throw MongoLabError.ParserError
+        guard let jsonObject = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) else {
+            throw MongoLabError.parserError
         }
 
-        return jsonObject
+        return jsonObject as AnyObject
     }
     
 }
