@@ -5,6 +5,10 @@
 * *DocumentService*: Modify document with id in collection
 * *DocumentService*: Delete document with id in collection
 
+## 0.2
+
+* Swift 3 syntax
+
 ## 0.1
 
 * Document service wrapper to post a document in a collection
