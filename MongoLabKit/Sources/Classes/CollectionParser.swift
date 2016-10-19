@@ -10,9 +10,9 @@ import Foundation
 
 class CollectionParser {
 
-    func parseJSON(JSON: AnyObject?) throws -> Collections {
+    func parse(_ JSON: AnyObject?) throws -> Collections {
         guard let items = JSON as? [String] else {
-            throw MongoLabError.ParserError
+            throw MongoLabError.parserError
         }
 
         return items

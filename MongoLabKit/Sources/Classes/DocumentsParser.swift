@@ -10,12 +10,12 @@ import Foundation
 
 class DocumentsParser {
 
-    func parseJSON(JSON: AnyObject?) throws -> Documents {
+    func parse(_ JSON: AnyObject?) throws -> Documents {
         guard let items = JSON as? [AnyObject] else {
-            throw MongoLabError.ParserError
+            throw MongoLabError.parserError
         }
 
-        return try items.map(DocumentParser().parseJSON)
+        return try items.map(DocumentParser().parse)
     }
     
 }

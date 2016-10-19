@@ -9,21 +9,21 @@
 import Foundation
 
 public enum MongoLabError: ErrorDescribable {
-    case ConnectionError
-    case RequestError
-    case ParserError
-    case ServerError(statusCode: Int, message: String?)
+    case connectionError
+    case requestError
+    case parserError
+    case serverError(statusCode: Int, message: String?)
 
 
     public func description() -> String {
         switch self {
-        case .ConnectionError:
+        case .connectionError:
             return "Unable to connect to server."
-        case .RequestError:
+        case .requestError:
             return "Unable to create a request to the database. baseURL and apiKey MUST be not empty in the configuration."
-        case .ParserError:
+        case .parserError:
             return "Something went wrong. Please try again."
-        case let .ServerError(statusCode, message):
+        case let .serverError(statusCode, message):
             return "Server error - status code: \(statusCode), message: \(message)"
         }
     }

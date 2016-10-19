@@ -8,6 +8,6 @@
 
 import Foundation
 
-public protocol ErrorDescribable: ErrorType {
+public protocol ErrorDescribable: Error {
     func description() -> String
 }

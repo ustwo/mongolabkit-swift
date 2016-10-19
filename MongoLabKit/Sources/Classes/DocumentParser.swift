@@ -10,34 +10,34 @@ import Foundation
 
 class DocumentParser {
 
-    private struct Keys {
+    fileprivate struct Keys {
         static let id = "_id"
         static let oid = "$oid"
     }
 
 
-    func parseJSON(JSON: AnyObject?) throws -> Document {
+    func parse(_ JSON: AnyObject?) throws -> Document {
         guard let data = JSON as? [String: AnyObject] else {
-            throw MongoLabError.ParserError
+            throw MongoLabError.parserError
         }
 
-        let id = try parseId(data)
+        let id = try parse(id: data as AnyObject)
 
         return Document(id: id, payload: data)
     }
 
 
-    private func parseId(JSON: AnyObject) throws -> String {
+    fileprivate func parse(id JSON: AnyObject) throws -> String {
         guard let data = JSON as? [String: AnyObject] else {
-            throw MongoLabError.ParserError
+            throw MongoLabError.parserError
         }
 
         guard let id = data[Keys.id] as? [String: AnyObject] else {
-            throw MongoLabError.ParserError
+            throw MongoLabError.parserError
         }
 
         guard let oid = id[Keys.oid] as? String else {
-            throw MongoLabError.ParserError
+            throw MongoLabError.parserError
         }
 
         return oid

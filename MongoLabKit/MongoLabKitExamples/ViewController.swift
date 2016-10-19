@@ -10,13 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    private let configuration = MongoLabConfiguration(baseURL: "", apiKey: "")
+    fileprivate let configuration = MongoLabConfiguration(baseURL: "", apiKey: "")
 
-    private let client = MongoLabClient()
+    fileprivate let client = MongoLabClient()
 
-    private var collectionService: CollectionService?
+    fileprivate var collectionService: CollectionService?
 
-    private var documentService: DocumentService?
+    fileprivate var documentService: DocumentService?
 
 }
 
@@ -27,15 +27,15 @@ class ViewController: UIViewController {
 
 extension ViewController {
 
-    private func performRequest(request: NSMutableURLRequest) {
-        client.performRequest(request) {
+    fileprivate func perform(_ request: URLRequest) {
+        client.perform(request) {
             result in
 
             switch result {
-            case let .Success(response):
+            case let .success(response):
                 print("Success \(response)")
 
-            case let .Failure(error):
+            case let .failure(error):
                 print("Error \(error)")
 
             }
@@ -45,26 +45,26 @@ extension ViewController {
 
     @IBAction func listCollections() {
         do {
-            let request = try MongoLabURLRequest.URLRequestWithConfiguration(configuration, relativeURL: "collections", method: .GET, parameters: [], bodyData: nil)
+            let request = try MongoLabURLRequest.urlRequestWith(configuration, relativeURL: "collections", method: .GET, parameters: [], bodyData: nil)
 
-            performRequest(request)
+            perform(request)
 
         } catch let error {
-            print("Error \((error as? ErrorDescribable ?? MongoLabError.RequestError).description())")
+            print("Error \((error as? ErrorDescribable ?? MongoLabError.requestError).description())")
         }
     }
 
 
     @IBAction func insertDocument() {
         do {
-            let body: [String: AnyObject] = ["UUID": NSUUID().UUIDString, "active": true]
+            let body: [String: AnyObject] = ["UUID": UUID().uuidString as AnyObject, "active": true as AnyObject]
 
-            let request = try MongoLabURLRequest.URLRequestWithConfiguration(configuration, relativeURL: "collections/randoms", method: .POST, parameters: [], bodyData: body)
+            let request = try MongoLabURLRequest.urlRequestWith(configuration, relativeURL: "collections/randoms", method: .POST, parameters: [], bodyData: body as AnyObject)
 
-            performRequest(request)
+            perform(request)
 
         } catch let error {
-            print("Error \((error as? ErrorDescribable ?? MongoLabError.RequestError).description())")
+            print("Error \((error as? ErrorDescribable ?? MongoLabError.requestError).description())")
         }
     }
 
@@ -73,12 +73,12 @@ extension ViewController {
         do {
             let param = MongoLabURLRequest.RequestParameter(parameter: "q", value: "{\"active\": true}")
 
-            let request = try MongoLabURLRequest.URLRequestWithConfiguration(configuration, relativeURL: "collections/randoms", method: .GET, parameters: [param], bodyData: nil)
+            let request = try MongoLabURLRequest.urlRequestWith(configuration, relativeURL: "collections/randoms", method: .GET, parameters: [param], bodyData: nil)
 
-            performRequest(request)
+            perform(request)
 
         } catch let error {
-            print("Error \((error as? ErrorDescribable ?? MongoLabError.RequestError).description())")
+            print("Error \((error as? ErrorDescribable ?? MongoLabError.requestError).description())")
         }
     }
 
@@ -101,17 +101,17 @@ extension ViewController {
 
 extension ViewController: CollectionServiceDelegate {
 
-    func collectionServiceWillLoadCollection(service: CollectionService?) {
+    func collectionServiceWillLoadCollection(_ service: CollectionService?) {
         print("Loading Collections")
     }
 
 
-    func collectionService(service: CollectionService?, didLoadCollections collections: Collections) {
+    func collectionService(_ service: CollectionService?, didLoadCollections collections: Collections) {
         print("Collections loaded: \(collections)")
     }
 
 
-    func collectionService(service: CollectionService?, didFailWithError error: ErrorDescribable) {
+    func collectionService(_ service: CollectionService?, didFailWithError error: ErrorDescribable) {
         print("Error: \(error.description())")
     }
     
@@ -126,12 +126,12 @@ extension ViewController {
 
     @IBAction func listDocumentsWithService() {
         documentService = DocumentService(configuration: configuration, delegate: self)
-        documentService?.loadDocumentsForCollection(Collection("randoms"))
+        documentService?.loadDocumentsFor(Collection("randoms"))
     }
 
 
     @IBAction func addDocumentWithService() {
-        let document = Document(id: NSUUID().UUIDString, payload: ["active": true])
+        let document = Document(id: UUID().uuidString, payload: ["active": true as AnyObject])
 
         documentService = DocumentService(configuration: configuration, delegate: self)
         documentService?.addDocument(document, inCollection: Collection("randoms"))
@@ -142,27 +142,27 @@ extension ViewController {
 
 extension ViewController: DocumentServiceDelegate {
 
-    func documentService(service: DocumentService?, willLoadDocumentsInCollection collection: Collection) {
+    func documentService(_ service: DocumentService?, willLoadDocumentsInCollection collection: Collection) {
         print("Loading Documents in collection: \(collection)")
     }
 
 
-    func documentService(service: DocumentService?, didLoadDocuments documents: Documents, inCollection collection: Collection) {
+    func documentService(_ service: DocumentService?, didLoadDocuments documents: Documents, inCollection collection: Collection) {
         print("Documents loaded: \(documents) in collection: \(collection)")
     }
 
 
-    func documentService(service: DocumentService?, willAddDocumentInCollection collection: Collection) {
+    func documentService(_ service: DocumentService?, willAddDocumentInCollection collection: Collection) {
         print("Adding Document in collection: \(collection)")
     }
 
 
-    func documentService(service: DocumentService?, didAddDocument document: Document, inCollection collection: Collection) {
+    func documentService(_ service: DocumentService?, didAddDocument document: Document, inCollection collection: Collection) {
         print("Document added: \(document) in collection: \(collection)")
     }
 
 
-    func documentService(service: DocumentService?, didFailWithError error: ErrorDescribable) {
+    func documentService(_ service: DocumentService?, didFailWithError error: ErrorDescribable) {
         print("Error: \(error.description())")
     }
     

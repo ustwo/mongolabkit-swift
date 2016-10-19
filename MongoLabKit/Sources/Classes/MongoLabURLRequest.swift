@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class MongoLabURLRequest: NSMutableURLRequest {
+open class MongoLabURLRequest: NSMutableURLRequest {
 
     public typealias RequestParameter = (parameter: String, value: String)
 
@@ -23,16 +23,16 @@ public class MongoLabURLRequest: NSMutableURLRequest {
 
 extension MongoLabURLRequest {
 
-    public class func URLRequestWithConfiguration(configuration: MongoLabConfiguration, relativeURL: String, method: HTTPMethod, parameters: [RequestParameter]?, bodyData: AnyObject?) throws -> NSMutableURLRequest {
+    public class func urlRequestWith(_ configuration: MongoLabConfiguration, relativeURL: String, method: HTTPMethod, parameters: [RequestParameter]?, bodyData: AnyObject?) throws -> URLRequest {
         if configuration.baseURL.isEmpty || configuration.apiKey.isEmpty {
-            throw MongoLabError.RequestError
+            throw MongoLabError.requestError
         }
         
-        let URLString = URLStringForBaseURL(configuration.baseURL, relativeURL: relativeURL, parameters: requiredParametersWithConfiguration(configuration, parameters: parameters))
+        let url = urlString(for: configuration.baseURL, relativeURL: relativeURL, parameters: requiredParametersWith(configuration, parameters: parameters))
 
-        let request = NSMutableURLRequest(URL: NSURL(string: URLString)!)
-        request.HTTPMethod = method.rawValue
-        request.HTTPBody = HTTPBodyDataForBodyObject(bodyData)
+        var request = URLRequest(url: URL(string: url)!)
+        request.httpMethod = method.rawValue
+        request.httpBody = HTTPBodyDataFor(bodyData)
         request.timeoutInterval = 30
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -41,9 +41,9 @@ extension MongoLabURLRequest {
     }
 
 
-    class func HTTPBodyDataForBodyObject(bodyObject: AnyObject?) -> NSData? {
+    class func HTTPBodyDataFor(_ bodyObject: AnyObject?) -> Data? {
         if let bodyObject = bodyObject {
-            if let jsonData = try? NSJSONSerialization.dataWithJSONObject(bodyObject, options: []) {
+            if let jsonData = try? JSONSerialization.data(withJSONObject: bodyObject, options: []) {
                 return jsonData
             }
         }
@@ -52,53 +52,53 @@ extension MongoLabURLRequest {
     }
 
 
-    class func requiredParametersWithConfiguration(configuration: MongoLabConfiguration, parameters: [RequestParameter]?) -> [RequestParameter] {
+    class func requiredParametersWith(_ configuration: MongoLabConfiguration, parameters: [RequestParameter]?) -> [RequestParameter] {
         let requiredParameters = [RequestParameter(parameter: "apiKey", value: configuration.apiKey)]
 
         guard var parameters = parameters else {
             return requiredParameters
         }
 
-        parameters.appendContentsOf(requiredParameters)
+        parameters.append(contentsOf: requiredParameters)
 
         return parameters
     }
 
 
-    class func URLStringForBaseURL(baseURL: String, relativeURL: String, parameters: [RequestParameter]?) -> String {
-        let parametersString = parametersStringWithCustomParameters(parameters)
+    class func urlString(for baseURL: String, relativeURL: String, parameters: [RequestParameter]?) -> String {
+        let parametersString = parametersStringWith(parameters)
 
         return "\(baseURL)/\(relativeURL)\(parametersString)"
     }
 
 
-    class func parametersStringWithCustomParameters(customParameters: [RequestParameter]?) -> String {
+    class func parametersStringWith(_ customParameters: [RequestParameter]?) -> String {
         var parameters = [RequestParameter]()
 
         if let customParameters = customParameters {
-            parameters.appendContentsOf(customParameters)
+            parameters.append(contentsOf: customParameters)
         }
 
-        let parameterString = parameters.map(mapWithEscapedValue(mapKeyWithValue)).joinWithSeparator("&")
+        let parameterString = parameters.map(mapWithEscapedValue(mapKeyWithValue)).joined(separator: "&")
         return parameterString.isEmpty ? "" : "?\(parameterString)"
     }
 
 
-    class private func mapWithEscapedValue(transform: ((String, value: String) -> String)) -> ((String, value: String) -> String) {
+    class fileprivate func mapWithEscapedValue(_ transform: @escaping ((String, _ value: String) -> String)) -> ((String, _ value: String) -> String) {
         return {
             key, value in
-            return transform(key, value: escapedStringFromValue(value))
+            return transform(key, escapedStringFrom(value))
         }
     }
 
 
-    class private func mapKeyWithValue(key: String, value: String) -> String {
+    class fileprivate func mapKeyWithValue(_ key: String, value: String) -> String {
         return "\(key)=\(value)"
     }
 
 
-    class private func escapedStringFromValue(value: String) -> String {
-        return value.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()) ?? value
+    class fileprivate func escapedStringFrom(_ value: String) -> String {
+        return value.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? value
     }
 
 }
