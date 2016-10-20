@@ -17,16 +17,17 @@ class MongoLabKit_CollectionService_iOSTests: XCTestCase {
     func testLoadCollections() {
         let mockConfiguration = MongoLabConfiguration(baseURL: "fakeURL", apiKey: "fakeApiKey")
 
-        let mockResult = MongoLabClient.Result.Success(response: ["Collection 1", "Collection 2"])
+        let response = ["Collection 1", "Collection 2"]
+        let mockResult = MongoLabClient.Result.success(response: response as AnyObject)
 
-        loadCollectionsWithMongoLabResult(mockResult, configuration: mockConfiguration) {
+        loadCollectionsWithMongoLab(mockResult: mockResult, configuration: mockConfiguration) {
             result in
 
             switch result {
-            case let .Success(response):
+            case let .success(response):
                 XCTAssertEqual(response, Collections(arrayLiteral: Collection("Collection 1"), Collection("Collection 2")))
 
-            case let .Failure(error):
+            case let .failure(error):
                 XCTFail(error.description())
                 
             }
@@ -37,17 +38,18 @@ class MongoLabKit_CollectionService_iOSTests: XCTestCase {
     func testLoadCollectionsWithParsingError() {
         let mockConfiguration = MongoLabConfiguration(baseURL: "fakeURL", apiKey: "fakeApiKey")
 
-        let mockResult = MongoLabClient.Result.Success(response: ["collections": ["Collection 1", "Collection 2"]])
+        let response = ["collections": ["Collection 1", "Collection 2"]]
+        let mockResult = MongoLabClient.Result.success(response: response as AnyObject)
 
-        loadCollectionsWithMongoLabResult(mockResult, configuration: mockConfiguration) {
+        loadCollectionsWithMongoLab(mockResult: mockResult, configuration: mockConfiguration) {
             result in
 
             switch result {
-            case .Success:
+            case .success:
                 XCTFail()
 
-            case let .Failure(error):
-                XCTAssertEqual(error.description(), MongoLabError.ParserError.description())
+            case let .failure(error):
+                XCTAssertEqual(error.description(), MongoLabError.parserError.description())
             }
         }
     }
@@ -56,17 +58,18 @@ class MongoLabKit_CollectionService_iOSTests: XCTestCase {
     func testLoadCollectionsWithConfigurationError() {
         let mockConfiguration = MongoLabConfiguration(baseURL: "", apiKey: "")
 
-        let mockResult = MongoLabClient.Result.Success(response: ["Collection 1", "Collection 2"])
+        let response = ["Collection 1", "Collection 2"]
+        let mockResult = MongoLabClient.Result.success(response: response as AnyObject)
 
-        loadCollectionsWithMongoLabResult(mockResult, configuration: mockConfiguration) {
+        loadCollectionsWithMongoLab(mockResult: mockResult, configuration: mockConfiguration) {
             result in
 
             switch result {
-            case .Success:
+            case .success:
                 XCTFail()
 
-            case let .Failure(error):
-                XCTAssertEqual(error.description(), MongoLabError.RequestError.description())
+            case let .failure(error):
+                XCTAssertEqual(error.description(), MongoLabError.requestError.description())
             }
         }
     }
@@ -74,25 +77,25 @@ class MongoLabKit_CollectionService_iOSTests: XCTestCase {
 
     // MARK: - Private helper methods
 
-    private func loadCollectionsWithMongoLabResult(mockResult: MongoLabClient.Result, configuration: MongoLabConfiguration, completion: MockCollectionServiceDelegate.Completion) {
-        let expectation = expectationWithDescription("asynchronous")
+    private func loadCollectionsWithMongoLab(mockResult: MongoLabClient.Result, configuration: MongoLabConfiguration, completion: @escaping MockCollectionServiceDelegate.Completion) {
+        let asynchronousExpectation = expectation(description: "asynchronous")
 
         let mockClient = MockMongoLabClient(result: mockResult)
 
         let mockDelegate = MockCollectionServiceDelegate() {
             result in
-            expectation.fulfill()
+            asynchronousExpectation.fulfill()
 
-            completion(result: result)
+            completion(result)
         }
 
-        loadCollectionsWithClient(mockClient, configuration: configuration, delegate: mockDelegate)
-        
-        waitForExpectationsWithTimeout(10, handler: nil)
+        loadCollectionsWith(client: mockClient, configuration: configuration, delegate: mockDelegate)
+
+        waitForExpectations(timeout: 10, handler: nil)
     }
 
 
-    private func loadCollectionsWithClient(client: MongoLabClient, configuration: MongoLabConfiguration, delegate: CollectionServiceDelegate) {
+    private func loadCollectionsWith(client: MongoLabClient, configuration: MongoLabConfiguration, delegate: CollectionServiceDelegate) {
         service = CollectionService(client: client, configuration: configuration, delegate: delegate)
         service?.loadCollections()
     }
@@ -108,8 +111,8 @@ class MongoLabKit_CollectionService_iOSTests: XCTestCase {
             self.result = result
         }
 
-        override func performRequest(request: NSMutableURLRequest, completion: MongoLabClient.Completion) {
-            completion(result: result)
+        override func perform(_ request: URLRequest, completion: @escaping MongoLabClient.Completion) {
+            completion(result)
         }
 
     }
@@ -120,30 +123,30 @@ class MongoLabKit_CollectionService_iOSTests: XCTestCase {
     class MockCollectionServiceDelegate: CollectionServiceDelegate {
 
         enum Result {
-            case Success(response: Collections)
-            case Failure(error: ErrorDescribable)
+            case success(response: Collections)
+            case failure(error: ErrorDescribable)
         }
 
-        typealias Completion = (result: Result) -> ()
+        typealias Completion = (_ result: Result) -> ()
 
 
         let completion: Completion
 
 
-        func collectionServiceWillLoadCollection(service: CollectionService?) {}
+        func collectionServiceWillLoadCollection(_ service: CollectionService?) {}
 
 
-        func collectionService(service: CollectionService?, didLoadCollections collections: Collections) {
-            completion(result: Result.Success(response: collections))
+        func collectionService(_ service: CollectionService?, didLoadCollections collections: Collections) {
+            completion(Result.success(response: collections))
         }
 
 
-        func collectionService(service: CollectionService?, didFailWithError error: ErrorDescribable) {
-            completion(result: Result.Failure(error: error))
+        func collectionService(_ service: CollectionService?, didFailWithError error: ErrorDescribable) {
+            completion(Result.failure(error: error))
         }
 
 
-        init(completion: Completion) {
+        init(completion: @escaping Completion) {
             self.completion = completion
         }
         

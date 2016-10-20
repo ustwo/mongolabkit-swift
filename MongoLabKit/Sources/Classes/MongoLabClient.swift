@@ -8,14 +8,14 @@
 
 import Foundation
 
-public class MongoLabClient {
+open class MongoLabClient {
 
     enum Result {
-        case Success(response: AnyObject)
-        case Failure(error: ErrorDescribable)
+        case success(response: AnyObject)
+        case failure(error: ErrorDescribable)
     }
 
-    typealias Completion = (result: Result) -> ()
+    typealias Completion = (_ result: Result) -> ()
 
     static let sharedClient = MongoLabClient()
 
@@ -23,8 +23,8 @@ public class MongoLabClient {
     // MARK: - Public methods
     // NOTE: - Not in the extension because is not possible to override a method in extensions yet.
 
-    func performRequest(request: NSMutableURLRequest, completion: Completion) {
-        dataTaskWithRequest(request, completion: completion).resume()
+    func perform(_ request: URLRequest, completion: @escaping Completion) {
+        dataTask(with: request, completion: completion).resume()
     }
 
 }
@@ -32,14 +32,14 @@ public class MongoLabClient {
 
 extension MongoLabClient {
 
-    func parseData(data: NSData?, response: NSURLResponse?, error: NSError?, completion: Completion) {
+    func parse(_ data: Data?, response: URLResponse?, error: Error?, completion: @escaping Completion) {
         do {
-            callCompletion(completion, withResult: Result.Success(response: try MongoLabResponseParser().parseData(data, response: response, error: error)))
+            call(completion, withResult: Result.success(response: try MongoLabResponseParser().parse(data, response: response, error: error)))
 
         } catch let error as ErrorDescribable {
-            callCompletion(completion, withResult: Result.Failure(error: error))
+            call(completion, withResult: Result.failure(error: error))
         } catch {
-            callCompletion(completion, withResult: Result.Failure(error: MongoLabError.ParserError))
+            call(completion, withResult: Result.failure(error: MongoLabError.parserError))
         }
     }
 
@@ -48,20 +48,22 @@ extension MongoLabClient {
 
 extension MongoLabClient {
 
-    private func dataTaskWithRequest(request: NSMutableURLRequest, completion: Completion) -> NSURLSessionTask {
-        let dataTask = NSURLSession.sharedSession().dataTaskWithRequest(request) {
-            [weak self] (data: NSData?, response: NSURLResponse?, error: NSError?) in
+    fileprivate func dataTask(with request: URLRequest, completion: @escaping Completion) -> URLSessionTask {
+        let dataTask = URLSession.shared.dataTask(with: request) {
+            [weak self] data, response, error in
 
-            self?.parseData(data, response: response, error: error, completion: completion)
+            self?.parse(data, response: response, error: error, completion: completion)
+
+            return
         }
 
         return dataTask
     }
 
 
-    private func callCompletion(completion: Completion, withResult result: Result) {
-        dispatch_async(dispatch_get_main_queue()) {
-            completion(result: result)
+    fileprivate func call(_ completion: @escaping Completion, withResult result: Result) {
+        DispatchQueue.main.async {
+            completion(result)
         }
     }
 
