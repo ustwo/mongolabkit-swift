@@ -8,14 +8,14 @@
 
 import Foundation
 
-class DocumentsParser {
+struct DocumentsParser {
 
-    func parse(_ JSON: AnyObject?) throws -> Documents {
+    static func parse(_ JSON: Any?) throws -> Documents {
         guard let items = JSON as? [AnyObject] else {
             throw MongoLabError.parserError
         }
 
-        return try items.map(DocumentParser().parse)
+        return try items.map(DocumentParser.parse)
     }
     
 }

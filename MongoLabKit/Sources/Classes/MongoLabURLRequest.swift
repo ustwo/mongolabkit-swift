@@ -10,7 +10,12 @@ import Foundation
 
 open class MongoLabURLRequest: NSMutableURLRequest {
 
+    // MARK: Typealiases
+
     public typealias RequestParameter = (parameter: String, value: String)
+
+
+    // MARK: Types
 
     public enum HTTPMethod: String {
         case POST
@@ -18,16 +23,14 @@ open class MongoLabURLRequest: NSMutableURLRequest {
         case PUT
     }
 
-}
 
-
-extension MongoLabURLRequest {
+    // MARK: Public class methods
 
     public class func urlRequestWith(_ configuration: MongoLabConfiguration, relativeURL: String, method: HTTPMethod, parameters: [RequestParameter]?, bodyData: AnyObject?) throws -> URLRequest {
         if configuration.baseURL.isEmpty || configuration.apiKey.isEmpty {
             throw MongoLabError.requestError
         }
-        
+
         let url = urlString(for: configuration.baseURL, relativeURL: relativeURL, parameters: requiredParametersWith(configuration, parameters: parameters))
 
         var request = URLRequest(url: URL(string: url)!)
@@ -41,7 +44,9 @@ extension MongoLabURLRequest {
     }
 
 
-    class func HTTPBodyDataFor(_ bodyObject: AnyObject?) -> Data? {
+    // MARK: Private helper methods
+
+    private class func HTTPBodyDataFor(_ bodyObject: AnyObject?) -> Data? {
         if let bodyObject = bodyObject {
             if let jsonData = try? JSONSerialization.data(withJSONObject: bodyObject, options: []) {
                 return jsonData
@@ -52,7 +57,7 @@ extension MongoLabURLRequest {
     }
 
 
-    class func requiredParametersWith(_ configuration: MongoLabConfiguration, parameters: [RequestParameter]?) -> [RequestParameter] {
+    private class func requiredParametersWith(_ configuration: MongoLabConfiguration, parameters: [RequestParameter]?) -> [RequestParameter] {
         let requiredParameters = [RequestParameter(parameter: "apiKey", value: configuration.apiKey)]
 
         guard var parameters = parameters else {
@@ -65,14 +70,14 @@ extension MongoLabURLRequest {
     }
 
 
-    class func urlString(for baseURL: String, relativeURL: String, parameters: [RequestParameter]?) -> String {
+    private class func urlString(for baseURL: String, relativeURL: String, parameters: [RequestParameter]?) -> String {
         let parametersString = parametersStringWith(parameters)
 
         return "\(baseURL)/\(relativeURL)\(parametersString)"
     }
 
 
-    class func parametersStringWith(_ customParameters: [RequestParameter]?) -> String {
+    private class func parametersStringWith(_ customParameters: [RequestParameter]?) -> String {
         var parameters = [RequestParameter]()
 
         if let customParameters = customParameters {
@@ -84,7 +89,7 @@ extension MongoLabURLRequest {
     }
 
 
-    class fileprivate func mapWithEscapedValue(_ transform: @escaping ((String, _ value: String) -> String)) -> ((String, _ value: String) -> String) {
+    private class func mapWithEscapedValue(_ transform: @escaping ((String, _ value: String) -> String)) -> ((String, _ value: String) -> String) {
         return {
             key, value in
             return transform(key, escapedStringFrom(value))
@@ -92,14 +97,13 @@ extension MongoLabURLRequest {
     }
 
 
-    class fileprivate func mapKeyWithValue(_ key: String, value: String) -> String {
+    private class func mapKeyWithValue(_ key: String, value: String) -> String {
         return "\(key)=\(value)"
     }
 
 
-    class fileprivate func escapedStringFrom(_ value: String) -> String {
+    private class func escapedStringFrom(_ value: String) -> String {
         return value.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? value
     }
 
 }
-

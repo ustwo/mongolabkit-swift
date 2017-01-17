@@ -10,7 +10,7 @@ import Foundation
 
 class MongoLabErrorParser {
 
-    fileprivate struct Keys {
+    private struct Keys {
         static let message = "message"
     }
 

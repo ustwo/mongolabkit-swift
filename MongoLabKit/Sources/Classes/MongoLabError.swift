@@ -9,6 +9,7 @@
 import Foundation
 
 public enum MongoLabError: ErrorDescribable {
+    case generic
     case connectionError
     case requestError
     case parserError
@@ -17,6 +18,8 @@ public enum MongoLabError: ErrorDescribable {
 
     public func description() -> String {
         switch self {
+        case .generic:
+            return "Generic error."
         case .connectionError:
             return "Unable to connect to server."
         case .requestError:

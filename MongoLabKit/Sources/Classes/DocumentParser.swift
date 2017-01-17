@@ -8,15 +8,15 @@
 
 import Foundation
 
-class DocumentParser {
+struct DocumentParser {
 
-    fileprivate struct Keys {
+    private struct Keys {
         static let id = "_id"
         static let oid = "$oid"
     }
 
 
-    func parse(_ JSON: AnyObject?) throws -> Document {
+    static func parse(_ JSON: Any?) throws -> Document {
         guard let data = JSON as? [String: AnyObject] else {
             throw MongoLabError.parserError
         }
@@ -27,7 +27,7 @@ class DocumentParser {
     }
 
 
-    fileprivate func parse(id JSON: AnyObject) throws -> String {
+    private static func parse(id JSON: AnyObject) throws -> String {
         guard let data = JSON as? [String: AnyObject] else {
             throw MongoLabError.parserError
         }
