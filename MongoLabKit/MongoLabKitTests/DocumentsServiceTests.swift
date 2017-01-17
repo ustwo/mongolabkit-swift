@@ -9,9 +9,9 @@
 import XCTest
 @testable import MongoLabKit
 
-class MongoLabKit_DocumentService_iOSTests: XCTestCase {
+class MongoLabKit_DocumentsService_iOSTests: XCTestCase {
 
-    private var service: DocumentService?
+    private var service: DocumentsService?
 
 
     func testLoadDocuments() {
@@ -95,9 +95,9 @@ class MongoLabKit_DocumentService_iOSTests: XCTestCase {
     }
 
 
-    private func loadDocumentsWith(client: MongoLabClient, configuration: MongoLabConfiguration, delegate: DocumentServiceDelegate) {
-        service = DocumentService(client: client, configuration: configuration, delegate: delegate)
-        service?.loadDocumentsFor("collection")
+    private func loadDocumentsWith(client: MongoLabClient, configuration: MongoLabConfiguration, delegate: ServiceDelegate) {
+        service = DocumentsService(client: client, configuration: configuration, delegate: delegate)
+        service?.loadDocuments(for: "collection")
     }
 
 
@@ -111,8 +111,10 @@ class MongoLabKit_DocumentService_iOSTests: XCTestCase {
             self.result = result
         }
 
-        override func perform(_ request: URLRequest, completion: @escaping MongoLabClient.Completion) {
+        override func perform(_ request: URLRequest, completion: @escaping MongoLabClient.Completion) -> URLSessionTask {
             completion(result)
+
+            return URLSessionTask()
         }
 
     }
@@ -120,7 +122,7 @@ class MongoLabKit_DocumentService_iOSTests: XCTestCase {
 
     // MARK: - Mocked delegate
 
-    class MockDocumentServiceDelegate: DocumentServiceDelegate {
+    class MockDocumentServiceDelegate: ServiceDelegate {
 
         enum Result {
             case Success(response: Documents)
@@ -133,21 +135,17 @@ class MongoLabKit_DocumentService_iOSTests: XCTestCase {
         let completion: Completion
 
 
-        func documentService(_ service: DocumentService?, willLoadDocumentsInCollection collection: Collection) {}
+        func serviceWillLoad<DataType>(_ service: Service<DataType>) {}
 
 
-        func documentService(_ service: DocumentService?, didLoadDocuments documents: Documents, inCollection collection: Collection) {
-            completion(Result.Success(response: documents))
+        func service<DataType>(_ service: Service<DataType>, didLoad data: DataType) {
+            if let documents = data as? Documents {
+                completion(Result.Success(response: documents))
+            }
         }
 
 
-        func documentService(_ service: DocumentService?, willAddDocumentInCollection collection: Collection) {}
-
-
-        func documentService(_ service: DocumentService?, didAddDocument document: Document, inCollection collection: Collection) {}
-
-
-        func documentService(_ service: DocumentService?, didFailWithError error: ErrorDescribable) {
+        func service<DataType>(_ service: Service<DataType>, didFailWith error: ErrorDescribable) {
             completion(Result.Failure(error: error))
         }
 

@@ -1,14 +1,14 @@
 //
-//  DocumentService.swift
+//  CollectionsService.swift
 //  MongoLabKit
 //
-//  Created by luca strazzullo on 17/01/2017.
+//  Created by luca strazzullo on 20/05/16.
 //
 //
 
 import Foundation
 
-class DocumentService: Service<Document> {
+class CollectionsService: Service<Collections> {
 
     // MARK: Instance properties
 
@@ -35,17 +35,17 @@ class DocumentService: Service<Document> {
 
     // MARK: Public APIs
 
-    public func addDocument(_ document: Document, inCollection collection: Collection) {
+    public func loadCollections() {
         delegate?.serviceWillLoad(self)
 
         do {
-            let request = try MongoLabURLRequest.urlRequestWith(configuration, relativeURL: "collections/\(collection)", method: .POST, parameters: [], bodyData: document.payload as AnyObject?)
+            let request = try MongoLabURLRequest.urlRequestWith(configuration, relativeURL: "collections", method: .GET, parameters: [], bodyData: nil)
 
-            perform(request: request, with: DocumentParser.parse)
+            perform(request: request, with: CollectionParser.parse)
 
         } catch let error {
             delegate?.service(self, didFailWith: error as? ErrorDescribable ?? MongoLabError.requestError)
         }
     }
-    
+
 }

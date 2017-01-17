@@ -8,9 +8,9 @@
 
 import Foundation
 
-class CollectionParser {
+struct CollectionParser {
 
-    func parse(_ JSON: AnyObject?) throws -> Collections {
+    static func parse(_ JSON: Any?) throws -> Collections {
         guard let items = JSON as? [String] else {
             throw MongoLabError.parserError
         }
