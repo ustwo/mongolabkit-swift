@@ -9,5 +9,3 @@
 import Foundation
 
 typealias Collection = String
-
-typealias Collections = [Collection]

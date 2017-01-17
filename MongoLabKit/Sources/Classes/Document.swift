@@ -8,9 +8,6 @@
 
 import Foundation
 
-typealias Documents = [Document]
-
-
 public struct Document {
 
     var id: String?
@@ -29,4 +26,3 @@ public struct Document {
     }
 
 }
-

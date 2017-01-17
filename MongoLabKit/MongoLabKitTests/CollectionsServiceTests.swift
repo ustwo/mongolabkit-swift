@@ -9,9 +9,9 @@
 import XCTest
 @testable import MongoLabKit
 
-class MongoLabKit_CollectionService_iOSTests: XCTestCase {
+class MongoLabKit_CollectionsService_iOSTests: XCTestCase {
 
-    private var service: CollectionService?
+    private var service: CollectionsService?
 
 
     func testLoadCollections() {
@@ -95,8 +95,8 @@ class MongoLabKit_CollectionService_iOSTests: XCTestCase {
     }
 
 
-    private func loadCollectionsWith(client: MongoLabClient, configuration: MongoLabConfiguration, delegate: CollectionServiceDelegate) {
-        service = CollectionService(client: client, configuration: configuration, delegate: delegate)
+    private func loadCollectionsWith(client: MongoLabClient, configuration: MongoLabConfiguration, delegate: ServiceDelegate) {
+        service = CollectionsService(client: client, configuration: configuration, delegate: delegate)
         service?.loadCollections()
     }
 
@@ -111,8 +111,10 @@ class MongoLabKit_CollectionService_iOSTests: XCTestCase {
             self.result = result
         }
 
-        override func perform(_ request: URLRequest, completion: @escaping MongoLabClient.Completion) {
+        override func perform(_ request: URLRequest, completion: @escaping MongoLabClient.Completion) -> URLSessionTask {
             completion(result)
+
+            return URLSessionTask()
         }
 
     }
@@ -120,7 +122,7 @@ class MongoLabKit_CollectionService_iOSTests: XCTestCase {
 
     // MARK: - Mocked delegate
 
-    class MockCollectionServiceDelegate: CollectionServiceDelegate {
+    class MockCollectionServiceDelegate: ServiceDelegate {
 
         enum Result {
             case success(response: Collections)
@@ -133,15 +135,17 @@ class MongoLabKit_CollectionService_iOSTests: XCTestCase {
         let completion: Completion
 
 
-        func collectionServiceWillLoadCollection(_ service: CollectionService?) {}
+        func serviceWillLoad<DataType>(_ service: Service<DataType>) {}
 
 
-        func collectionService(_ service: CollectionService?, didLoadCollections collections: Collections) {
-            completion(Result.success(response: collections))
+        func service<DataType>(_ service: Service<DataType>, didLoad data: DataType) {
+            if let collections = data as? Collections {
+                completion(Result.success(response: collections))
+            }
         }
 
 
-        func collectionService(_ service: CollectionService?, didFailWithError error: ErrorDescribable) {
+        func service<DataType>(_ service: Service<DataType>, didFailWith error: ErrorDescribable) {
             completion(Result.failure(error: error))
         }
 
