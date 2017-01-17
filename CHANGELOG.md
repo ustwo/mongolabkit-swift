@@ -5,6 +5,11 @@
 * *DocumentService*: Modify document with id in collection
 * *DocumentService*: Delete document with id in collection
 
+## 0.3
+
+* Refactoring with Generics
+* Code conventions
+
 ## 0.2
 
 * Swift 3 syntax
