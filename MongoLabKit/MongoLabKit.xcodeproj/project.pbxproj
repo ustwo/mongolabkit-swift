@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00C6B6FF1E327014001E9A28 /* MongoLabKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8180CA2B1CEBEB12008E3011 /* MongoLabKit.framework */; };
+		00C6B7051E327093001E9A28 /* CollectionsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CABC1CEBF39F008E3011 /* CollectionsServiceTests.swift */; };
+		00C6B7061E327093001E9A28 /* DocumentsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811353B71CF4173E00E76DD5 /* DocumentsServiceTests.swift */; };
+		00C6B7101E3270AD001E9A28 /* MongoLabKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8180CA461CEBEB44008E3011 /* MongoLabKit.framework */; };
+		00C6B7161E3270D7001E9A28 /* CollectionsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CABC1CEBF39F008E3011 /* CollectionsServiceTests.swift */; };
+		00C6B7171E3270D7001E9A28 /* DocumentsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811353B71CF4173E00E76DD5 /* DocumentsServiceTests.swift */; };
 		811353A31CF40C8A00E76DD5 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811353A21CF40C8A00E76DD5 /* Document.swift */; };
 		811353A41CF40C8A00E76DD5 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811353A21CF40C8A00E76DD5 /* Document.swift */; };
 		811353A51CF40C8A00E76DD5 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811353A21CF40C8A00E76DD5 /* Document.swift */; };
@@ -18,35 +24,20 @@
 		811353AD1CF40EE800E76DD5 /* DocumentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811353AC1CF40EE800E76DD5 /* DocumentParser.swift */; };
 		811353AE1CF40EE800E76DD5 /* DocumentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811353AC1CF40EE800E76DD5 /* DocumentParser.swift */; };
 		811353AF1CF40EE800E76DD5 /* DocumentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811353AC1CF40EE800E76DD5 /* DocumentParser.swift */; };
-		811353B21CF40EF300E76DD5 /* CollectionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A861CEEBDBE00487BFE /* CollectionParser.swift */; };
 		811353B31CF4108300E76DD5 /* DocumentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813574371CF40BFD00FBDBEF /* DocumentsService.swift */; };
 		811353B41CF4108700E76DD5 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811353A21CF40C8A00E76DD5 /* Document.swift */; };
 		811353B51CF4109000E76DD5 /* DocumentsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811353A81CF40E9900E76DD5 /* DocumentsParser.swift */; };
 		811353B61CF4109000E76DD5 /* DocumentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811353AC1CF40EE800E76DD5 /* DocumentParser.swift */; };
-		811353B81CF4173E00E76DD5 /* DocumentsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811353B71CF4173E00E76DD5 /* DocumentsServiceTests.swift */; };
-		811353B91CF41BE600E76DD5 /* DocumentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813574371CF40BFD00FBDBEF /* DocumentsService.swift */; };
-		811353BA1CF41BED00E76DD5 /* DocumentsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811353A81CF40E9900E76DD5 /* DocumentsParser.swift */; };
-		811353BB1CF41BED00E76DD5 /* DocumentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811353AC1CF40EE800E76DD5 /* DocumentParser.swift */; };
-		811353BC1CF41BF400E76DD5 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811353A21CF40C8A00E76DD5 /* Document.swift */; };
 		813574381CF40BFD00FBDBEF /* DocumentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813574371CF40BFD00FBDBEF /* DocumentsService.swift */; };
 		81748A761CEEBBB300487BFE /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A751CEEBBB300487BFE /* Collection.swift */; };
 		81748A791CEEBBDC00487BFE /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A751CEEBBB300487BFE /* Collection.swift */; };
 		81748A7A1CEEBBDD00487BFE /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A751CEEBBB300487BFE /* Collection.swift */; };
-		81748A7B1CEEBBDD00487BFE /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A751CEEBBB300487BFE /* Collection.swift */; };
 		81748A821CEEBC5B00487BFE /* CollectionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A811CEEBC5B00487BFE /* CollectionsService.swift */; };
 		81748A831CEEBC5B00487BFE /* CollectionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A811CEEBC5B00487BFE /* CollectionsService.swift */; };
 		81748A841CEEBC5B00487BFE /* CollectionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A811CEEBC5B00487BFE /* CollectionsService.swift */; };
-		81748A851CEEBC5B00487BFE /* CollectionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A811CEEBC5B00487BFE /* CollectionsService.swift */; };
 		81748A871CEEBDBE00487BFE /* CollectionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A861CEEBDBE00487BFE /* CollectionParser.swift */; };
 		81748A881CEEBDBE00487BFE /* CollectionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A861CEEBDBE00487BFE /* CollectionParser.swift */; };
 		81748A891CEEBDBE00487BFE /* CollectionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81748A861CEEBDBE00487BFE /* CollectionParser.swift */; };
-		81748A8B1CEEBF0C00487BFE /* MongoLabURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA5F1CEBEEE4008E3011 /* MongoLabURLRequest.swift */; };
-		81748A8C1CEEC11200487BFE /* ErrorDescribable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA591CEBEEE4008E3011 /* ErrorDescribable.swift */; };
-		81748A8D1CEEC11400487BFE /* MongoLabError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA5C1CEBEEE4008E3011 /* MongoLabError.swift */; };
-		81748A8E1CEEC11700487BFE /* MongoLabConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA5B1CEBEEE4008E3011 /* MongoLabConfiguration.swift */; };
-		81748A8F1CEEC11C00487BFE /* MongoLabClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA5A1CEBEEE4008E3011 /* MongoLabClient.swift */; };
-		81748A901CEEC12200487BFE /* MongoLabErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA5D1CEBEEE4008E3011 /* MongoLabErrorParser.swift */; };
-		81748A921CEEC12600487BFE /* MongoLabResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA5E1CEBEEE4008E3011 /* MongoLabResponseParser.swift */; };
 		8180CA2F1CEBEB12008E3011 /* MongoLabKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8180CA2E1CEBEB12008E3011 /* MongoLabKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8180CA531CEBED05008E3011 /* MongoLabKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8180CA2E1CEBEB12008E3011 /* MongoLabKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8180CA541CEBED06008E3011 /* MongoLabKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8180CA2E1CEBEB12008E3011 /* MongoLabKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -71,8 +62,6 @@
 		8180CA721CEBEEE4008E3011 /* MongoLabURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA5F1CEBEEE4008E3011 /* MongoLabURLRequest.swift */; };
 		8180CA731CEBEEE4008E3011 /* MongoLabURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA5F1CEBEEE4008E3011 /* MongoLabURLRequest.swift */; };
 		8180CA741CEBEEE4008E3011 /* MongoLabURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CA5F1CEBEEE4008E3011 /* MongoLabURLRequest.swift */; };
-		8180CABF1CEBF39F008E3011 /* MongoLabKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8180CA2B1CEBEB12008E3011 /* MongoLabKit.framework */; };
-		8180CAC51CEBF3B3008E3011 /* CollectionsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CABC1CEBF39F008E3011 /* CollectionsServiceTests.swift */; };
 		819ECB161CEEC89F000AB899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819ECB151CEEC89F000AB899 /* AppDelegate.swift */; };
 		819ECB181CEEC89F000AB899 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819ECB171CEEC89F000AB899 /* ViewController.swift */; };
 		819ECB1B1CEEC89F000AB899 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 819ECB191CEEC89F000AB899 /* Main.storyboard */; };
@@ -98,36 +87,34 @@
 		81F6BB711E2DCCC400262CCB /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6BB661E2DC60000262CCB /* Service.swift */; };
 		81F6BB721E2DCCC400262CCB /* Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6BB6C1E2DCC4B00262CCB /* Collections.swift */; };
 		81F6BB731E2DCCC400262CCB /* Documents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6BB6A1E2DCC3800262CCB /* Documents.swift */; };
-		81F6BB741E2DCCC500262CCB /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6BB661E2DC60000262CCB /* Service.swift */; };
-		81F6BB751E2DCCC500262CCB /* Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6BB6C1E2DCC4B00262CCB /* Collections.swift */; };
-		81F6BB761E2DCCC500262CCB /* Documents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6BB6A1E2DCC3800262CCB /* Documents.swift */; };
 		81F6BB771E2DCCC500262CCB /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6BB661E2DC60000262CCB /* Service.swift */; };
 		81F6BB781E2DCCC500262CCB /* Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6BB6C1E2DCC4B00262CCB /* Collections.swift */; };
 		81F6BB791E2DCCC500262CCB /* Documents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6BB6A1E2DCC3800262CCB /* Documents.swift */; };
 		81F6BB7A1E2DCFC800262CCB /* DocumentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6BB681E2DCAB400262CCB /* DocumentService.swift */; };
 		81F6BB7B1E2DCFC900262CCB /* DocumentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6BB681E2DCAB400262CCB /* DocumentService.swift */; };
-		81F6BB7C1E2DCFC900262CCB /* DocumentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6BB681E2DCAB400262CCB /* DocumentService.swift */; };
 		81F6BB7D1E2DCFCA00262CCB /* DocumentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6BB681E2DCAB400262CCB /* DocumentService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		813FD38B1DB637C8004F947D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8180CA201CEBEA71008E3011 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 819ECB121CEEC89F000AB899;
-			remoteInfo = MongoLabKitExamples;
-		};
-		8180CAC01CEBF39F008E3011 /* PBXContainerItemProxy */ = {
+		00C6B7001E327014001E9A28 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8180CA201CEBEA71008E3011 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8180CA2A1CEBEB12008E3011;
-			remoteInfo = "SwiftMongoLabKit iOS";
+			remoteInfo = "MongoLabKit iOS";
+		};
+		00C6B7111E3270AD001E9A28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8180CA201CEBEA71008E3011 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8180CA451CEBEB44008E3011;
+			remoteInfo = "MongoLabKit tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00C6B6FA1E327014001E9A28 /* MongoLabKitTests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MongoLabKitTests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00C6B70B1E3270AC001E9A28 /* MongoLabKitTests tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MongoLabKitTests tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		811353A21CF40C8A00E76DD5 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Document.swift; path = Sources/Classes/Document.swift; sourceTree = "<group>"; };
 		811353A81CF40E9900E76DD5 /* DocumentsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DocumentsParser.swift; path = Sources/Classes/DocumentsParser.swift; sourceTree = "<group>"; };
 		811353AC1CF40EE800E76DD5 /* DocumentParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DocumentParser.swift; path = Sources/Classes/DocumentParser.swift; sourceTree = "<group>"; };
@@ -157,7 +144,6 @@
 		8180CA5D1CEBEEE4008E3011 /* MongoLabErrorParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MongoLabErrorParser.swift; path = Sources/Classes/MongoLabErrorParser.swift; sourceTree = "<group>"; };
 		8180CA5E1CEBEEE4008E3011 /* MongoLabResponseParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MongoLabResponseParser.swift; path = Sources/Classes/MongoLabResponseParser.swift; sourceTree = "<group>"; };
 		8180CA5F1CEBEEE4008E3011 /* MongoLabURLRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MongoLabURLRequest.swift; path = Sources/Classes/MongoLabURLRequest.swift; sourceTree = "<group>"; };
-		8180CABA1CEBF39F008E3011 /* MongoLabKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MongoLabKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8180CABC1CEBF39F008E3011 /* CollectionsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsServiceTests.swift; sourceTree = "<group>"; };
 		8180CABE1CEBF39F008E3011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8180CAF41CEC0240008E3011 /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CONTRIBUTING.md; path = ../CONTRIBUTING.md; sourceTree = "<group>"; };
@@ -176,6 +162,22 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		00C6B6F71E327014001E9A28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00C6B6FF1E327014001E9A28 /* MongoLabKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00C6B7081E3270AC001E9A28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00C6B7101E3270AD001E9A28 /* MongoLabKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8180CA271CEBEB12008E3011 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -194,14 +196,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8180CAB71CEBF39F008E3011 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8180CABF1CEBF39F008E3011 /* MongoLabKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,8 +324,9 @@
 				8180CA2B1CEBEB12008E3011 /* MongoLabKit.framework */,
 				8180CA391CEBEB39008E3011 /* MongoLabKit.framework */,
 				8180CA461CEBEB44008E3011 /* MongoLabKit.framework */,
-				8180CABA1CEBF39F008E3011 /* MongoLabKitTests.xctest */,
 				819ECB131CEEC89F000AB899 /* MongoLabKitExamples.app */,
+				00C6B6FA1E327014001E9A28 /* MongoLabKitTests iOS.xctest */,
+				00C6B70B1E3270AC001E9A28 /* MongoLabKitTests tvOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -424,6 +419,42 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		00C6B6F91E327014001E9A28 /* MongoLabKitTests iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00C6B7021E327014001E9A28 /* Build configuration list for PBXNativeTarget "MongoLabKitTests iOS" */;
+			buildPhases = (
+				00C6B6F61E327014001E9A28 /* Sources */,
+				00C6B6F71E327014001E9A28 /* Frameworks */,
+				00C6B6F81E327014001E9A28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00C6B7011E327014001E9A28 /* PBXTargetDependency */,
+			);
+			name = "MongoLabKitTests iOS";
+			productName = "MongoLabKitTests iOS";
+			productReference = 00C6B6FA1E327014001E9A28 /* MongoLabKitTests iOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		00C6B70A1E3270AC001E9A28 /* MongoLabKitTests tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00C6B7131E3270AD001E9A28 /* Build configuration list for PBXNativeTarget "MongoLabKitTests tvOS" */;
+			buildPhases = (
+				00C6B7071E3270AC001E9A28 /* Sources */,
+				00C6B7081E3270AC001E9A28 /* Frameworks */,
+				00C6B7091E3270AC001E9A28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00C6B7121E3270AD001E9A28 /* PBXTargetDependency */,
+			);
+			name = "MongoLabKitTests tvOS";
+			productName = "MongoLabKitTests tvOS";
+			productReference = 00C6B70B1E3270AC001E9A28 /* MongoLabKitTests tvOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		8180CA2A1CEBEB12008E3011 /* MongoLabKit iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8180CA311CEBEB12008E3011 /* Build configuration list for PBXNativeTarget "MongoLabKit iOS" */;
@@ -478,25 +509,6 @@
 			productReference = 8180CA461CEBEB44008E3011 /* MongoLabKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		8180CAB91CEBF39F008E3011 /* MongoLabKitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8180CAC21CEBF39F008E3011 /* Build configuration list for PBXNativeTarget "MongoLabKitTests" */;
-			buildPhases = (
-				8180CAB61CEBF39F008E3011 /* Sources */,
-				8180CAB71CEBF39F008E3011 /* Frameworks */,
-				8180CAB81CEBF39F008E3011 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8180CAC11CEBF39F008E3011 /* PBXTargetDependency */,
-				813FD38C1DB637C8004F947D /* PBXTargetDependency */,
-			);
-			name = MongoLabKitTests;
-			productName = SwiftMongoLabKitTests;
-			productReference = 8180CABA1CEBF39F008E3011 /* MongoLabKitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		819ECB121CEEC89F000AB899 /* MongoLabKitExamples */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 819ECB241CEEC89F000AB899 /* Build configuration list for PBXNativeTarget "MongoLabKitExamples" */;
@@ -520,9 +532,17 @@
 		8180CA201CEBEA71008E3011 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0800;
 				TargetAttributes = {
+					00C6B6F91E327014001E9A28 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					00C6B70A1E3270AC001E9A28 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
 					8180CA2A1CEBEB12008E3011 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
@@ -530,9 +550,6 @@
 						CreatedOnToolsVersion = 7.3.1;
 					};
 					8180CA451CEBEB44008E3011 = {
-						CreatedOnToolsVersion = 7.3.1;
-					};
-					8180CAB91CEBF39F008E3011 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 					819ECB121CEEC89F000AB899 = {
@@ -555,15 +572,30 @@
 			projectRoot = "";
 			targets = (
 				8180CA2A1CEBEB12008E3011 /* MongoLabKit iOS */,
+				00C6B6F91E327014001E9A28 /* MongoLabKitTests iOS */,
 				8180CA381CEBEB39008E3011 /* MongoLabKit watchOS */,
 				8180CA451CEBEB44008E3011 /* MongoLabKit tvOS */,
-				8180CAB91CEBF39F008E3011 /* MongoLabKitTests */,
+				00C6B70A1E3270AC001E9A28 /* MongoLabKitTests tvOS */,
 				819ECB121CEEC89F000AB899 /* MongoLabKitExamples */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		00C6B6F81E327014001E9A28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00C6B7091E3270AC001E9A28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8180CA291CEBEB12008E3011 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -585,13 +617,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8180CAB81CEBF39F008E3011 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		819ECB111CEEC89F000AB899 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -605,6 +630,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		00C6B6F61E327014001E9A28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00C6B7061E327093001E9A28 /* DocumentsServiceTests.swift in Sources */,
+				00C6B7051E327093001E9A28 /* CollectionsServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00C6B7071E3270AC001E9A28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00C6B7171E3270D7001E9A28 /* DocumentsServiceTests.swift in Sources */,
+				00C6B7161E3270D7001E9A28 /* CollectionsServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8180CA261CEBEB12008E3011 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -680,33 +723,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8180CAB61CEBF39F008E3011 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				81748A921CEEC12600487BFE /* MongoLabResponseParser.swift in Sources */,
-				81748A8B1CEEBF0C00487BFE /* MongoLabURLRequest.swift in Sources */,
-				81748A8C1CEEC11200487BFE /* ErrorDescribable.swift in Sources */,
-				81748A851CEEBC5B00487BFE /* CollectionsService.swift in Sources */,
-				811353B91CF41BE600E76DD5 /* DocumentsService.swift in Sources */,
-				811353BB1CF41BED00E76DD5 /* DocumentParser.swift in Sources */,
-				811353B81CF4173E00E76DD5 /* DocumentsServiceTests.swift in Sources */,
-				81748A8D1CEEC11400487BFE /* MongoLabError.swift in Sources */,
-				81F6BB7C1E2DCFC900262CCB /* DocumentService.swift in Sources */,
-				811353BC1CF41BF400E76DD5 /* Document.swift in Sources */,
-				81F6BB761E2DCCC500262CCB /* Documents.swift in Sources */,
-				811353BA1CF41BED00E76DD5 /* DocumentsParser.swift in Sources */,
-				8180CAC51CEBF3B3008E3011 /* CollectionsServiceTests.swift in Sources */,
-				81F6BB741E2DCCC500262CCB /* Service.swift in Sources */,
-				81748A8E1CEEC11700487BFE /* MongoLabConfiguration.swift in Sources */,
-				81748A901CEEC12200487BFE /* MongoLabErrorParser.swift in Sources */,
-				81748A8F1CEEC11C00487BFE /* MongoLabClient.swift in Sources */,
-				81F6BB751E2DCCC500262CCB /* Collections.swift in Sources */,
-				811353B21CF40EF300E76DD5 /* CollectionParser.swift in Sources */,
-				81748A7B1CEEBBDD00487BFE /* Collection.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		819ECB0F1CEEC89F000AB899 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -737,15 +753,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		813FD38C1DB637C8004F947D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 819ECB121CEEC89F000AB899 /* MongoLabKitExamples */;
-			targetProxy = 813FD38B1DB637C8004F947D /* PBXContainerItemProxy */;
-		};
-		8180CAC11CEBF39F008E3011 /* PBXTargetDependency */ = {
+		00C6B7011E327014001E9A28 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8180CA2A1CEBEB12008E3011 /* MongoLabKit iOS */;
-			targetProxy = 8180CAC01CEBF39F008E3011 /* PBXContainerItemProxy */;
+			targetProxy = 00C6B7001E327014001E9A28 /* PBXContainerItemProxy */;
+		};
+		00C6B7121E3270AD001E9A28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8180CA451CEBEB44008E3011 /* MongoLabKit tvOS */;
+			targetProxy = 00C6B7111E3270AD001E9A28 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -769,6 +785,140 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		00C6B7031E327014001E9A28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = MongoLabKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ustwo.MongoLabKitTests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		00C6B7041E327014001E9A28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = MongoLabKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ustwo.MongoLabKitTests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		00C6B7141E3270AD001E9A28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = MongoLabKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ustwo.MongoLabKitTests-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TVOS_DEPLOYMENT_TARGET = 10.1;
+			};
+			name = Debug;
+		};
+		00C6B7151E3270AD001E9A28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = MongoLabKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ustwo.MongoLabKitTests-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 3.0;
+				TVOS_DEPLOYMENT_TARGET = 10.1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		8180CA241CEBEA71008E3011 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1163,97 +1313,6 @@
 			};
 			name = Release;
 		};
-		8180CAC31CEBF39F008E3011 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = MongoLabKitTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ustwo.MongoLabKitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		8180CAC41CEBF39F008E3011 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = MongoLabKitTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ustwo.MongoLabKitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 		819ECB221CEEC89F000AB899 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1352,6 +1411,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		00C6B7021E327014001E9A28 /* Build configuration list for PBXNativeTarget "MongoLabKitTests iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00C6B7031E327014001E9A28 /* Debug */,
+				00C6B7041E327014001E9A28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		00C6B7131E3270AD001E9A28 /* Build configuration list for PBXNativeTarget "MongoLabKitTests tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00C6B7141E3270AD001E9A28 /* Debug */,
+				00C6B7151E3270AD001E9A28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		8180CA231CEBEA71008E3011 /* Build configuration list for PBXProject "MongoLabKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1384,15 +1459,6 @@
 			buildConfigurations = (
 				8180CA4C1CEBEB44008E3011 /* Debug */,
 				8180CA4D1CEBEB44008E3011 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8180CAC21CEBF39F008E3011 /* Build configuration list for PBXNativeTarget "MongoLabKitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8180CAC31CEBF39F008E3011 /* Debug */,
-				8180CAC41CEBF39F008E3011 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

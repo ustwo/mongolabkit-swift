@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "00C6B70A1E3270AC001E9A28"
+               BuildableName = "MongoLabKitTests tvOS.xctest"
+               BlueprintName = "MongoLabKitTests tvOS"
+               ReferencedContainer = "container:MongoLabKit.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "8180CA451CEBEB44008E3011"
+            BuildableName = "MongoLabKit.framework"
+            BlueprintName = "MongoLabKit tvOS"
+            ReferencedContainer = "container:MongoLabKit.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
