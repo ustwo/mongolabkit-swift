@@ -1,0 +1,55 @@
+desc "Runs tests on the primary platforms and configurations"
+lane :test do
+    verify(
+        scheme: "MongoLabKit iOS"
+    )
+    verify(
+        scheme: "MongoLabKit tvOS"
+    )
+    pod_lib_lint
+end
+
+desc "Runs tests"
+lane :verify do |options|
+    scheme = options[:scheme]
+    destination = options[:destination]
+    sdk = options[:sdk]
+    output_directory = "./.fastlane/test_output/" + scheme + "/"
+    opts = {
+        :workspace => 'MongoLabKit.xcworkspace',
+        :scheme => scheme,
+        :destination => destination,
+        :sdk => sdk,
+        :code_coverage => true,
+        :xcargs => "ONLY_ACTIVE_ARCH=YES",
+        :output_directory => output_directory,
+        :clean => true
+    }
+    scan(opts)
+    upload_cov
+end
+
+desc "Builds scheme"
+lane :build do |options|
+    scheme = options[:scheme]
+    destination = options[:destination]
+    sdk = options[:sdk]
+    xcodebuild(
+        workspace: 'MongoLabKit.xcworkspace',
+        scheme: scheme,
+        destination: destination,
+        sdk: sdk,
+        xcargs: 'ONLY_ACTIVE_ARCH=YES',
+        build: true,
+        clean: true
+    )
+end
+
+desc "Upload code coverage reports (if running on CI)"
+lane :upload_cov do
+    if is_ci?
+        sh "bash ./codecov.sh"
+    else
+        say "No need to upload code coverage. Not running from CI."
+    end
+end
