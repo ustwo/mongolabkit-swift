@@ -6,6 +6,8 @@
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods Compatible](https://img.shields.io/badge/Pods-compatible-4BC51D.svg?style=flat)](https://cocoapods.org)
 [![Platforms iOS | watchOS | tvOS](https://img.shields.io/badge/Platforms-iOS%20%7C%20watchOS%20%7C%20tvOS-lightgray.svg?style=flat)](https://developer.apple.com/swift/)
+[![Build Status](https://travis-ci.org/ustwo/mongolabkit-swift.svg?branch=master)](https://travis-ci.org/ustwo/mongolabkit-swift)
+[![codecov.io](https://codecov.io/github/ustwo/mongolabkit-swift/coverage.svg?branch=master)](https://codecov.io/github/ustwo/mongolabkit-swift?branch=master)
 
 MongoLabKit is a REST client API for iOS, tvOS and watchOS written to make REST calls to a MongoLab database.
 
