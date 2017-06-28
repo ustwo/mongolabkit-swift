@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     // MARK: Instance properties
 
-    private let configuration = MongoLabConfiguration(baseURL: "", apiKey: "")
+    private let configuration = MongoLabApiV1Configuration(databaseName: "", apiKey: "")
     private let client = MongoLabClient()
     private var collectionsService: CollectionsService?
     private var documentsService: DocumentsService?
