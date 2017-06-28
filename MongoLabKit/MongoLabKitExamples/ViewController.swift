@@ -49,7 +49,7 @@ class ViewController: UIViewController {
 
     @IBAction func listDocuments() {
         do {
-            let param = MongoLabURLRequest.RequestParameter(parameter: "q", value: "{\"active\": true}")
+            let param = URLRequest.QueryStringParameter(key: "q", value: "{\"active\": true}")
 
             let request = try MongoLabURLRequest.urlRequestWith(configuration, relativeURL: "collections/randoms", method: .GET, parameters: [param], bodyData: nil)
 
