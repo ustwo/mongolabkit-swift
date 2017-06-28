@@ -27,7 +27,7 @@ public enum MongoLabError: ErrorDescribable {
         case .parserError:
             return "Something went wrong. Please try again."
         case let .serverError(statusCode, message):
-            return "Server error - status code: \(statusCode), message: \(message)"
+            return "Server error - status code: \(statusCode), message: \(String(describing: message))"
         }
     }
 }
