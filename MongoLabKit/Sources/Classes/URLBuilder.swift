@@ -12,8 +12,8 @@ public struct URLBuilder {
 
     // MARK: Public API
 
-    public static func url(for baseURL: String, relativeURL: String, parameters: [URLRequest.QueryStringParameter]?) -> URL? {
-        let string = urlString(for: baseURL, relativeURL: relativeURL, parameters: parameters)
+    public static func url(for baseURL: String, databaseName: String, relativeURL: String, parameters: [URLRequest.QueryStringParameter]?) -> URL? {
+        let string = urlString(for: baseURL, databaseName: databaseName, relativeURL: relativeURL, parameters: parameters)
 
         return URL(string: string)
     }
@@ -21,10 +21,10 @@ public struct URLBuilder {
 
     // MARK: Private helper methods
 
-    private static func urlString(for baseURL: String, relativeURL: String, parameters: [URLRequest.QueryStringParameter]?) -> String {
+    private static func urlString(for baseURL: String, databaseName: String, relativeURL: String, parameters: [URLRequest.QueryStringParameter]?) -> String {
         let parametersString = parametersStringWith(parameters)
 
-        return "\(baseURL)/\(relativeURL)\(parametersString)"
+        return "\(baseURL)/\(databaseName)/\(relativeURL)\(parametersString)"
     }
 
 

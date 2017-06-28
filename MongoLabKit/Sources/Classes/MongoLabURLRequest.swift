@@ -12,12 +12,10 @@ public struct MongoLabURLRequest {
 
     // MARK: Public class methods
 
-    public static func urlRequestWith(_ configuration: MongoLabConfiguration, relativeURL: String, method: URLRequest.HTTPMethod, parameters: [URLRequest.QueryStringParameter]?, bodyData: AnyObject?) throws -> URLRequest {
-        if configuration.baseURL.isEmpty || configuration.apiKey.isEmpty {
-            throw MongoLabError.requestError
-        }
+    static func urlRequestWith(_ configuration: Configuration, relativeURL: String, method: URLRequest.HTTPMethod, parameters: [URLRequest.QueryStringParameter]?, bodyData: AnyObject?) throws -> URLRequest {
+        try configuration.validate()
 
-        let url = URLBuilder.url(for: configuration.baseURL, relativeURL: relativeURL, parameters: requiredParametersWith(configuration, parameters: parameters))
+        let url = URLBuilder.url(for: configuration.baseURL, databaseName: configuration.databaseName, relativeURL: relativeURL, parameters: requiredParametersWith(configuration, parameters: parameters))
 
         var request = URLRequest(url: url!)
         request.httpMethod = method.rawValue
@@ -43,7 +41,7 @@ public struct MongoLabURLRequest {
     }
 
 
-    private static func requiredParametersWith(_ configuration: MongoLabConfiguration, parameters: [URLRequest.QueryStringParameter]?) -> [URLRequest.QueryStringParameter] {
+    private static func requiredParametersWith(_ configuration: Configuration, parameters: [URLRequest.QueryStringParameter]?) -> [URLRequest.QueryStringParameter] {
         let requiredParameters = [URLRequest.QueryStringParameter(key: "apiKey", value: configuration.apiKey)]
 
         guard var parameters = parameters else {

@@ -12,12 +12,12 @@ class MongoLabService<DataType>: Service<DataType> {
 
     // MARK: Instance properties
 
-    internal var configuration: MongoLabConfiguration
+    internal var configuration: Configuration
 
 
     // MARK: Object life cycle
 
-    required init(client: MongoLabClient, configuration: MongoLabConfiguration, delegate: ServiceDelegate) {
+    required init(client: MongoLabClient, configuration: Configuration, delegate: ServiceDelegate) {
         self.configuration = configuration
         super.init(client: client)
 
@@ -25,7 +25,7 @@ class MongoLabService<DataType>: Service<DataType> {
     }
 
 
-    required init(configuration: MongoLabConfiguration, delegate: ServiceDelegate) {
+    required init(configuration: Configuration, delegate: ServiceDelegate) {
         self.configuration = configuration
         super.init(client: MongoLabClient())
 
