@@ -5,6 +5,10 @@
 * *DocumentService*: Modify document with id in collection
 * *DocumentService*: Delete document with id in collection
 
+## 0.4
+
+* Configuration refactored. Now it's easier to configure the client by only set the database name rather than the entire base URL that is always the same for version 1.
+
 ## 0.3
 
 * Refactoring with Generics
