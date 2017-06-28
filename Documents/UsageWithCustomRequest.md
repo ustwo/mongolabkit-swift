@@ -3,10 +3,10 @@
 ### Creating a GET request with query string parameters
 
 ``` Swift
-let configuration = MongoLabConfiguration(baseURL: "{BASE_URL}", apiKey: "{API_KEY}")
+let configuration = MongoLabApiV1Configuration(databaseName: "{DATABASE_NAME}", apiKey: "{API_KEY}")
 
-let parameter1 = MongoLabURLRequest.RequestParameter(parameter: "{PARAMETER_NAME}", value: "{PARAMETER_VALUE}")
-let parameter2 = MongoLabURLRequest.RequestParameter(parameter: "{PARAMETER_NAME}", value: "{PARAMETER_VALUE}")
+let parameter1 = URLRequest.QueryStringParameter(key: "{PARAMETER_KEY}", value: "{PARAMETER_VALUE}")
+let parameter2 = URLRequest.QueryStringParameter(key: "{PARAMETER_KEY}", value: "{PARAMETER_VALUE}")
 
 let request = try MongoLabURLRequest.URLRequestWithConfiguration(configuration, relativeURL: "collections/[COLLECTION_NAME]", method: .GET, parameters: [parameter1, parameter2], bodyData: nil)
 ```
@@ -14,7 +14,7 @@ let request = try MongoLabURLRequest.URLRequestWithConfiguration(configuration, 
 ### Creating a POST request with body data
 
 ``` Swift
-let configuration = MongoLabConfiguration(baseURL: "{BASE_URL}", apiKey: "{API_KEY}")
+let configuration = MongoLabApiV1Configuration(databaseName: "{DATABASE_NAME}", apiKey: "{API_KEY}")
 
 let body: [String: AnyObject] = [{PARAMETER_KEY}: [{PARAMETER_KEY}: {PARAMETER_VALUE}]]
 

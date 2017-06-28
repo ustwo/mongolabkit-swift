@@ -23,11 +23,11 @@ public enum MongoLabError: ErrorDescribable {
         case .connectionError:
             return "Unable to connect to server."
         case .requestError:
-            return "Unable to create a request to the database. baseURL and apiKey MUST be not empty in the configuration."
+            return "Unable to create a request to the database."
         case .parserError:
             return "Something went wrong. Please try again."
         case let .serverError(statusCode, message):
-            return "Server error - status code: \(statusCode), message: \(message)"
+            return "Server error - status code: \(statusCode), message: \(String(describing: message))"
         }
     }
 }

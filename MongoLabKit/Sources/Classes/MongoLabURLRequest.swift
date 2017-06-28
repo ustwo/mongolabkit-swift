@@ -8,32 +8,16 @@
 
 import Foundation
 
-open class MongoLabURLRequest: NSMutableURLRequest {
-
-    // MARK: Typealiases
-
-    public typealias RequestParameter = (parameter: String, value: String)
-
-
-    // MARK: Types
-
-    public enum HTTPMethod: String {
-        case POST
-        case GET
-        case PUT
-    }
-
+public struct MongoLabURLRequest {
 
     // MARK: Public class methods
 
-    public class func urlRequestWith(_ configuration: MongoLabConfiguration, relativeURL: String, method: HTTPMethod, parameters: [RequestParameter]?, bodyData: AnyObject?) throws -> URLRequest {
-        if configuration.baseURL.isEmpty || configuration.apiKey.isEmpty {
-            throw MongoLabError.requestError
-        }
+    static func urlRequestWith(_ configuration: Configuration, relativeURL: String, method: URLRequest.HTTPMethod, parameters: [URLRequest.QueryStringParameter]?, bodyData: AnyObject?) throws -> URLRequest {
+        try configuration.validate()
 
-        let url = urlString(for: configuration.baseURL, relativeURL: relativeURL, parameters: requiredParametersWith(configuration, parameters: parameters))
+        let url = URLBuilder.url(for: configuration.baseURL, databaseName: configuration.databaseName, relativeURL: relativeURL, parameters: requiredParametersWith(configuration, parameters: parameters))
 
-        var request = URLRequest(url: URL(string: url)!)
+        var request = URLRequest(url: url!)
         request.httpMethod = method.rawValue
         request.httpBody = HTTPBodyDataFor(bodyData)
         request.timeoutInterval = 30
@@ -46,7 +30,7 @@ open class MongoLabURLRequest: NSMutableURLRequest {
 
     // MARK: Private helper methods
 
-    private class func HTTPBodyDataFor(_ bodyObject: AnyObject?) -> Data? {
+    private static func HTTPBodyDataFor(_ bodyObject: AnyObject?) -> Data? {
         if let bodyObject = bodyObject {
             if let jsonData = try? JSONSerialization.data(withJSONObject: bodyObject, options: []) {
                 return jsonData
@@ -57,8 +41,8 @@ open class MongoLabURLRequest: NSMutableURLRequest {
     }
 
 
-    private class func requiredParametersWith(_ configuration: MongoLabConfiguration, parameters: [RequestParameter]?) -> [RequestParameter] {
-        let requiredParameters = [RequestParameter(parameter: "apiKey", value: configuration.apiKey)]
+    private static func requiredParametersWith(_ configuration: Configuration, parameters: [URLRequest.QueryStringParameter]?) -> [URLRequest.QueryStringParameter] {
+        let requiredParameters = [URLRequest.QueryStringParameter(key: "apiKey", value: configuration.apiKey)]
 
         guard var parameters = parameters else {
             return requiredParameters
@@ -67,43 +51,6 @@ open class MongoLabURLRequest: NSMutableURLRequest {
         parameters.append(contentsOf: requiredParameters)
 
         return parameters
-    }
-
-
-    private class func urlString(for baseURL: String, relativeURL: String, parameters: [RequestParameter]?) -> String {
-        let parametersString = parametersStringWith(parameters)
-
-        return "\(baseURL)/\(relativeURL)\(parametersString)"
-    }
-
-
-    private class func parametersStringWith(_ customParameters: [RequestParameter]?) -> String {
-        var parameters = [RequestParameter]()
-
-        if let customParameters = customParameters {
-            parameters.append(contentsOf: customParameters)
-        }
-
-        let parameterString = parameters.map(mapWithEscapedValue(mapKeyWithValue)).joined(separator: "&")
-        return parameterString.isEmpty ? "" : "?\(parameterString)"
-    }
-
-
-    private class func mapWithEscapedValue(_ transform: @escaping ((String, _ value: String) -> String)) -> ((String, _ value: String) -> String) {
-        return {
-            key, value in
-            return transform(key, escapedStringFrom(value))
-        }
-    }
-
-
-    private class func mapKeyWithValue(_ key: String, value: String) -> String {
-        return "\(key)=\(value)"
-    }
-
-
-    private class func escapedStringFrom(_ value: String) -> String {
-        return value.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? value
     }
 
 }

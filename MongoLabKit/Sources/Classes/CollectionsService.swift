@@ -8,30 +8,7 @@
 
 import Foundation
 
-class CollectionsService: Service<Collections> {
-
-    // MARK: Instance properties
-
-    private var configuration: MongoLabConfiguration
-
-
-    // MARK: Object life cycle
-
-    required init(client: MongoLabClient, configuration: MongoLabConfiguration, delegate: ServiceDelegate) {
-        self.configuration = configuration
-        super.init(client: client)
-
-        self.delegate = delegate
-    }
-
-
-    required init(configuration: MongoLabConfiguration, delegate: ServiceDelegate) {
-        self.configuration = configuration
-        super.init(client: MongoLabClient())
-
-        self.delegate = delegate
-    }
-
+class CollectionsService: MongoLabService<Collections> {
 
     // MARK: Public APIs
 

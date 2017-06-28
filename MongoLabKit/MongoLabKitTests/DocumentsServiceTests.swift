@@ -15,7 +15,7 @@ class MongoLabKit_DocumentsService_iOSTests: XCTestCase {
 
 
     func testLoadDocuments() {
-        let mockConfiguration = MongoLabConfiguration(baseURL: "fakeURL", apiKey: "fakeApiKey")
+        let mockConfiguration = MongoLabApiV1Configuration(databaseName: "fakeName", apiKey: "fakeApiKey")
 
         let response = [["_id": ["$oid": "5743ab370a00b27cd1d10c92"]]]
         let mockResult = MongoLabClient.Result.success(response: response as AnyObject)
@@ -36,7 +36,7 @@ class MongoLabKit_DocumentsService_iOSTests: XCTestCase {
 
 
     func testLoadDocumentsWithParsingError() {
-        let mockConfiguration = MongoLabConfiguration(baseURL: "fakeURL", apiKey: "fakeApiKey")
+        let mockConfiguration = MongoLabApiV1Configuration(databaseName: "fakeName", apiKey: "fakeApiKey")
 
         let response = [["$oid": "5743ab370a00b27cd1d10c92"]]
         let mockResult = MongoLabClient.Result.success(response: response as AnyObject)
@@ -56,7 +56,7 @@ class MongoLabKit_DocumentsService_iOSTests: XCTestCase {
 
 
     func testLoadDocumentsWithConfigurationError() {
-        let mockConfiguration = MongoLabConfiguration(baseURL: "", apiKey: "")
+        let mockConfiguration = MongoLabApiV1Configuration(databaseName: "", apiKey: "")
 
         let response = [["$oid": "5743ab370a00b27cd1d10c92"]]
         let mockResult = MongoLabClient.Result.success(response: response as AnyObject)
@@ -69,7 +69,7 @@ class MongoLabKit_DocumentsService_iOSTests: XCTestCase {
                 XCTFail()
 
             case let .Failure(error):
-                XCTAssertEqual(error.description(), MongoLabError.requestError.description())
+                XCTAssertEqual(error.description(), RequestError.configuration.description())
             }
         }
     }
@@ -77,7 +77,7 @@ class MongoLabKit_DocumentsService_iOSTests: XCTestCase {
 
     // MARK: - Private helper methods
 
-    private func loadDocumentsWithMongoLab(mockResult: MongoLabClient.Result, configuration: MongoLabConfiguration, completion: @escaping MockDocumentServiceDelegate.Completion) {
+    private func loadDocumentsWithMongoLab(mockResult: MongoLabClient.Result, configuration: MongoLabApiV1Configuration, completion: @escaping MockDocumentServiceDelegate.Completion) {
         let asynchronousExpectation = expectation(description: "asynchronous")
 
         let mockClient = MockMongoLabClient(result: mockResult)
@@ -95,7 +95,7 @@ class MongoLabKit_DocumentsService_iOSTests: XCTestCase {
     }
 
 
-    private func loadDocumentsWith(client: MongoLabClient, configuration: MongoLabConfiguration, delegate: ServiceDelegate) {
+    private func loadDocumentsWith(client: MongoLabClient, configuration: MongoLabApiV1Configuration, delegate: ServiceDelegate) {
         service = DocumentsService(client: client, configuration: configuration, delegate: delegate)
         service?.loadDocuments(for: "collection")
     }
