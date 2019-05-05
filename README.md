@@ -1,6 +1,10 @@
 # MongoLabKit by ustwo
 ---
 
+⚠️ No longer maintained ⚠️
+
+---
+
 ### Welcome to MongoLabKit 
 [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/ustwo/mongolabkit-swift/blob/master/LICENSE) 
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
